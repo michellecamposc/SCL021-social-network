@@ -1,5 +1,10 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { myFunction } from './lib/index.js';
+import { login } from './views/login.js';
 
-myFunction();
+login();
+const loginContainer = document.getElementById('container');
+
+function firstPage(){
+    loginContainer.innerHTML(login());
+}
