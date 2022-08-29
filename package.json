@@ -34,5 +34,17 @@
   },
   "engines": {
     "node": ">=16.x"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michellecamposc/SCL021-social-network.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/michellecamposc/SCL021-social-network/issues"
+  },
+  "homepage": "https://github.com/michellecamposc/SCL021-social-network#readme"
 }
