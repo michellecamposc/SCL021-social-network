@@ -1,10 +1,13 @@
 // Este es el punto de entrada de tu aplicacion
 
+
 import { login } from './views/login.js';
 
-login();
-const loginContainer = document.getElementById('container');
+const rootContainer = document.getElementById('root');
+rootContainer.appendChild(login());
 
-function firstPage() {
-  loginContainer.innerHTML(login());
-}
+
+
+// function firstPage() {
+//   loginContainer.innerHTML(login());
+// }
