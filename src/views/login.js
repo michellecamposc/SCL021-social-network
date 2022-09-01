@@ -1,28 +1,37 @@
+// eslint import/no-unresolved: [2, { ignore: ['gstatic'] }]
+
+import { logInGoogle } from "../firebase.js";
+
 export function login() {
   const loginContainer = document.createElement("div");
+  loginContainer.classList.add("loginContainer");
+
+  const headerLogin = document.createElement("div");
+  headerLogin.classList.add("headerLogin");
+  loginContainer.appendChild(headerLogin);
 
   const logo = document.createElement("img");
-  logo.setAttribute("src", "../images/logoazul.png");
-  logo.classList.add("logo");
-  loginContainer.appendChild(logo);
+  logo.setAttribute("src", "../images/logoblanco.png");
+  logo.classList.add("logoBlanco");
+  headerLogin.appendChild(logo);
 
   const logoTitle = document.createElement("h1");
   logoTitle.textContent = "Go Wild Nature";
   logoTitle.classList.add("logoTitle");
-  loginContainer.appendChild(logoTitle);
+  headerLogin.appendChild(logoTitle);
 
   const form = document.createElement("form");
   form.classList.add("form");
   loginContainer.appendChild(form);
 
   const inputMail = document.createElement("input");
-  inputMail.classList.add("inputLogin");
+  inputMail.classList.add("inputMail");
   inputMail.setAttribute("type", "email");
   inputMail.setAttribute("placeholder", "Email");
   form.appendChild(inputMail);
 
   const inputPassword = document.createElement("input");
-  inputPassword.classList.add("inputLogin");
+  inputPassword.classList.add("inputPassword");
   inputPassword.setAttribute("type", "password");
   inputPassword.setAttribute("placeholder", "Password");
   form.appendChild(inputPassword);
@@ -50,7 +59,10 @@ export function login() {
   loginGoogle.classList.add("loginGoogle");
   loginButtonsContainer.appendChild(loginGoogle);
 
-  //Botón de Facebook
+  // Funcionalidad boton logInGoogle
+  loginGoogle.addEventListener("click", logInGoogle);
+
+  // Botón de Facebook
   const loginFacebook = document.createElement("button");
   loginFacebook.classList.add("loginFacebook");
   loginButtonsContainer.appendChild(loginFacebook);
