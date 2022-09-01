@@ -1,3 +1,7 @@
+/* eslint import/no-unresolved: [2, { ignore: ['gstatic'] }] */
+
+import { logInGoogle } from "../firebase.js";
+
 export function login() {
   const loginContainer = document.createElement('div');
 
@@ -46,6 +50,9 @@ export function login() {
   // Imagen del boton
   loginGoogle.classList.add('loginGoogle');
   loginButtonsContainer.appendChild(loginGoogle);
+
+  // Funcionalidad boton logInGoogle
+  loginGoogle.addEventListener('click', logInGoogle);
 
   const loginFacebook = document.createElement('button');
   // Imagen del boton
