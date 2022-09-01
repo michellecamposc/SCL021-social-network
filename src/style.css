@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Outfit:wght@300;600&display=swap');
+*{
+margin: 0px;
+padding: 0px;
+}
+
+#root{
+    background-image: url(images/loginpicture.jpg);
+    width: 390px;
+    height: 812px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;   
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.loginContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100vh;
+    height: 100vh;
+}
+
+.logoBlanco{
+    height: 30%;
+    width: 30%;
+    margin-bottom: ;
+}
+
+.headerLogin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+height: 30%;
+}
+
+.form{
+    display:flex;
+    flex-direction: column;
+    height: 30%;
+}
+
+.logoTitle{
+    color: #FFFFFF;
+    font-family: bowlby one SC;  
+}
+
+.inputPassword{
+    color: #FFFFFF;
+}
+
+.inputMail{
+    color: #FFFFFF;
+}
+
+.loginButtonsContainer{
+
+}
+
+.loginSubmit{
+
+}
