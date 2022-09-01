@@ -46,5 +46,9 @@
   "bugs": {
     "url": "https://github.com/michellecamposc/SCL021-social-network/issues"
   },
-  "homepage": "https://github.com/michellecamposc/SCL021-social-network#readme"
+  "homepage": "https://github.com/michellecamposc/SCL021-social-network#readme",
+  "dependencies": {
+    "firebase": "^9.9.3",
+    "firebase-admin": "^11.0.1"
+  }
 }

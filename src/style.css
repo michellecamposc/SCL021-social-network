@@ -1,66 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Outfit:wght@300;600&display=swap');
-*{
-margin: 0px;
-padding: 0px;
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Outfit:wght@300;600&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-#root{
-    background-image: url(images/loginpicture.jpg);
-    width: 390px;
-    height: 812px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;   
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.loginContainer{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100vh;
-    height: 100vh;
+/*Contenedor creado desde el HTML*/
+#root {
+  background-image: url(images/loginpicture.jpg);
+  width: 390px;
+  height: 812px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.logoBlanco{
-    height: 30%;
-    width: 30%;
-    margin-bottom: ;
+/*Contenedor con toda la información creada en el DOM*/
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100vh;
+  height: 100vh;
 }
 
-.headerLogin{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-height: 30%;
+/*Contenedor con el logo y su título*/
+.headerLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 30%;
 }
 
-.form{
-    display:flex;
-    flex-direction: column;
-    height: 30%;
+.logoBlanco {
+  height: 28%;
+  width: 25%;
 }
 
-.logoTitle{
-    color: #FFFFFF;
-    font-family: bowlby one SC;  
+.logoTitle {
+  color: #ffffff;
+  font-family: bowlby one SC;
 }
 
-.inputPassword{
-    color: #FFFFFF;
+/*Formulario del login*/
+.form {
+  display: flex;
+  flex-direction: column;
+  height: 30%;
 }
 
-.inputMail{
-    color: #FFFFFF;
+.inputPassword {
+  color: #ffffff;
 }
 
-.loginButtonsContainer{
-
+.inputMail {
+  color: #ffffff;
 }
 
-.loginSubmit{
+/*Botones del login*/
+.loginButtonsContainer {
+}
 
+.loginSubmit {
 }
