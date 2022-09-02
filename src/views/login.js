@@ -27,19 +27,19 @@ export function login() {
   const inputMail = document.createElement("input");
   inputMail.classList.add("inputMail");
   inputMail.setAttribute("type", "email");
-  inputMail.setAttribute("placeholder", "Email");
+  inputMail.setAttribute("placeholder", "   Email");
   form.appendChild(inputMail);
 
   const inputPassword = document.createElement("input");
   inputPassword.classList.add("inputPassword");
   inputPassword.setAttribute("type", "password");
-  inputPassword.setAttribute("placeholder", "Password");
+  inputPassword.setAttribute("placeholder", "   Password");
   form.appendChild(inputPassword);
 
   const loginSubmit = document.createElement("input");
   loginSubmit.classList.add("loginSubmit");
   loginSubmit.setAttribute("type", "submit");
-  loginSubmit.setAttribute("name", "Login");
+  loginSubmit.setAttribute("value", "Login");
   form.appendChild(loginSubmit);
 
   const signupOption = document.createElement("p");
