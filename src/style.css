@@ -40,8 +40,8 @@
 }
 
 .logoBlanco {
-  height: 25%;
-  width: 20%;
+  height: 22%;
+  width: 22%;
 }
 
 .logoTitle {
@@ -55,7 +55,7 @@
   width: 73%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .inputMail {
@@ -99,7 +99,8 @@
   height: 15%;
   border-radius: 40px;
   border: none;
-  color: #0000009c;
+  color: rgba(0, 0, 0, 0.63);
+  background-color: rgba(245, 245, 245, 0.78);
   font-family: outfit;
   font-weight: 900;
   font-size: medium;
@@ -111,7 +112,7 @@
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
-  width: 38%;
+  width: 80%;
 }
 .signupOption {
   color: rgba(255, 255, 255, 1);
@@ -126,14 +127,13 @@
   margin: auto;
 }
 
-
 /*Botones del login*/
 .loginButtonsContainer {
   margin-top: 2em;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  width: 38%;
+  width: 80%;
 }
 
 /*Botón de Google*/
@@ -166,7 +166,7 @@
   display: flex;
   justify-content: center;
   flex-direction: row;
-  width: 58%;
+  width: 80%;
   gap: 3em;
 }
 
@@ -178,6 +178,6 @@
 .accountAndPassword {
   color: rgba(255, 255, 255, 1);
   font-family: outfit;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   margin-top: 1em;
 }
