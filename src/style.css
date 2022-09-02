@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Outfit:wght@300;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700;900&display=swap");
 
 * {
   margin: 0px;
@@ -7,34 +8,34 @@
 
 /*Contenedor creado desde el HTML*/
 #root {
-  background-image: url(images/loginpicture.jpg);
-  width: 390px;
-  height: 812px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url(images/loginpicture.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 /*Contenedor con toda la información creada en el DOM*/
 .loginContainer {
+  width: 100%;
+  height: 100vh;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 100vh;
-  height: 100vh;
 }
 
 /*Contenedor con el logo y su título*/
 .headerLogin {
+  height: 30%;
+  margin: 12% 0% 14% 0%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 30%;
 }
 
 .logoBlanco {
@@ -49,22 +50,65 @@
 
 /*Formulario del login*/
 .form {
+  height: 30%;
+  width: 73%;
   display: flex;
   flex-direction: column;
-  height: 30%;
+  gap: 2rem;
 }
-
-.inputPassword {
-  color: #ffffff;
+.containerEmail {
+  display: flex;
+  flex-direction: column;
 }
 
 .inputMail {
+  padding-bottom: 2%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  outline: 0px;
+  font-family: outfit;
+  font-size: medium;
   color: #ffffff;
+}
+
+/* Aquí se ven las imágenes pero cambia la fuente del placeholder */
+.inputMail::placeholder {
+  font-size: medium;
+  color: #ffffffc4;
+  /* font-family: "Font Awesome 5 Free";
+  font-weight: 900; */
+}
+
+.inputPassword {
+  padding-bottom: 2%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  outline: 0px;
+  font-family: outfit;
+  font-size: medium;
+  color: #ffffff;
+}
+
+/* Aquí se ven las imágenes pero cambia la fuente del placeholder */
+.inputPassword::placeholder {
+  font-size: medium;
+  color: #ffffffc4;
+  /* font-family: "Font Awesome 5 Free";
+  font-weight: 900; */
+}
+
+.loginSubmit {
+  height: 35px;
+  border-radius: 40px;
+  border: none;
+  color: #0000009c;
+  font-family: outfit;
+  font-weight: 900;
+  font-size: medium;
 }
 
 /*Botones del login*/
 .loginButtonsContainer {
-}
-
-.loginSubmit {
 }
