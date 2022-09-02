@@ -42,12 +42,25 @@ export function login() {
   loginSubmit.setAttribute("name", "Login");
   form.appendChild(loginSubmit);
 
+  //Sección de Sign up
+  const signUpContainer = document.createElement("div");
+  signUpContainer.classList.add("signUpContainer");
+  loginContainer.appendChild(signUpContainer);
+
+  const leftLine = document.createElement("div");
+  leftLine.classList.add("signUpLines");
+  signUpContainer.appendChild(leftLine);
+
   const signupOption = document.createElement("p");
   signupOption.textContent = "Or sign up with";
   signupOption.classList.add("signupOption");
-  loginContainer.appendChild(signupOption);
+  signUpContainer.appendChild(signupOption);
 
-  // Contenedor de botones del login
+  const rightLine = document.createElement("div");
+  rightLine.classList.add("signUpLines");
+  signUpContainer.appendChild(rightLine);
+
+  // Sección de botones del login
 
   //Contenedor con todos los botones
   const loginButtonsContainer = document.createElement("div");
@@ -55,28 +68,42 @@ export function login() {
   loginContainer.appendChild(loginButtonsContainer);
 
   //Botón de Google
-  const loginGoogle = document.createElement("button");
-  loginGoogle.classList.add("loginGoogle");
-  loginButtonsContainer.appendChild(loginGoogle);
+  const loginGoogleButton = document.createElement("button");
+  loginGoogleButton.classList.add("loginGoogleButton");
+  loginButtonsContainer.appendChild(loginGoogleButton);
 
   // Funcionalidad boton logInGoogle
-  loginGoogle.addEventListener("click", logInGoogle);
+  loginGoogleButton.addEventListener("click", logInGoogle);
 
   // Botón de Facebook
-  const loginFacebook = document.createElement("button");
-  loginFacebook.classList.add("loginFacebook");
-  loginButtonsContainer.appendChild(loginFacebook);
+  const loginFacebookButton = document.createElement("button");
+  loginFacebookButton.classList.add("loginFacebookButton");
+  loginButtonsContainer.appendChild(loginFacebookButton);
 
   //Botón de Apple
-  const loginApple = document.createElement("button");
-  loginApple.classList.add("loginApple");
-  loginButtonsContainer.appendChild(loginApple);
+  const loginAppleButton = document.createElement("button");
+  loginAppleButton.classList.add("loginAppleButton");
+  loginButtonsContainer.appendChild(loginAppleButton);
 
-  //Olvidaste contraseña
+  // Create account y olvidaste contraseña
+
+  const accountAndPasswordContainer = document.createElement("div");
+  accountAndPasswordContainer.classList.add("accountAndPasswordContainer");
+  loginContainer.appendChild(accountAndPasswordContainer);
+
+  const createAccount = document.createElement("p");
+  createAccount.textContent = "Create account";
+  createAccount.classList.add("accountAndPassword");
+  accountAndPasswordContainer.appendChild(createAccount);
+
+  const verticalLine = document.createElement("div");
+  verticalLine.classList.add("verticalLine");
+  accountAndPasswordContainer.appendChild(verticalLine);
+
   const forgetPassword = document.createElement("p");
   forgetPassword.textContent = "Forget Password";
-  forgetPassword.classList.add("forgetPassword");
-  loginContainer.appendChild(forgetPassword);
+  forgetPassword.classList.add("accountAndPassword");
+  accountAndPasswordContainer.appendChild(forgetPassword);
 
   return loginContainer;
 }
