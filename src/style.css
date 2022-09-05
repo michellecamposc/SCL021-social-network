@@ -38,10 +38,10 @@
   justify-content: center;
   flex-direction: column;
 }
-
+/*Cambie el width para que no estuviera aplastado*/
 .logoBlanco {
   height: 22%;
-  width: 22%;
+  width: 18.5%; 
 }
 
 .logoTitle {
@@ -67,13 +67,20 @@
   font-family: outfit;
   font-size: medium;
   color: #ffffff;
+
 }
-/* Aquí se ven las imágenes pero cambia la fuente del placeholder */
+
+
+/* Aquí se ven los -iconos- las imágenes pero cambia la fuente del placeholder */
+/*Agregue icono inputMail*/
 .inputMail::placeholder {
-  font-size: medium;
+  /*font-size: small;*/
   color: #ffffffc4;
-  /* font-family: "Font Awesome 5 Free";
-  font-weight: 900; */
+ /* font-weight: 900; */
+ font: var(--fa-font-solid);
+ content: "\f007";
+ font-size: 0.8rem;
+ -webkit-font-smoothing: antialiased;
 }
 
 .inputPassword {
@@ -87,12 +94,16 @@
   color: #ffffff;
 }
 
-/* Aquí se ven las imágenes pero cambia la fuente del placeholder */
+/* Aquí se ven las --los iconos-- imágenes pero cambia la fuente del placeholder */
+/*Agregue icono inputPassword*/
 .inputPassword::placeholder {
-  font-size: medium;
+  /*font-size: small;*/
   color: #ffffffc4;
-  /* font-family: "Font Awesome 5 Free";
-  font-weight: 900; */
+ /* font-weight: 900; */
+ font: var(--fa-font-solid);
+ content: "\f084";
+ font-size: 0.8rem;
+ -webkit-font-smoothing: antialiased;
 }
 
 .loginSubmit {
@@ -142,6 +153,13 @@
   width: 4.8em;
   border: none;
   border-radius: 8px;
+  padding: 2%;
+}
+
+/*Imagen del botón de Google*/
+.googleImgButton {
+    height: 1.8em;
+    width: 1.8em;
 }
 
 /*Botón de Facebook*/
@@ -150,6 +168,13 @@
   width: 4.8em;
   border: none;
   border-radius: 8px;
+  padding: 2%;
+}
+
+/*Imagen del botón de Facebook*/
+.facebookImgButton{
+    height: 1.8em;
+    width: 1.8em;
 }
 
 /*Botón de Apple*/
@@ -158,6 +183,14 @@
   width: 4.8em;
   border: none;
   border-radius: 8px;
+  padding: 2%;
+}
+
+/*Imagen del botón de Apple*/
+.appleImgButton{
+    height: 2.1em;
+    width: 1.8em;
+    margin-top: -8%;
 }
 
 /* Crear una cuenta y olvidar contraseña*/

@@ -33,7 +33,7 @@ export function login() {
   const inputPassword = document.createElement("input");
   inputPassword.classList.add("inputPassword");
   inputPassword.setAttribute("type", "password");
-  inputPassword.setAttribute("placeholder", "   Password");
+  inputPassword.setAttribute("placeholder", "   Password");
   form.appendChild(inputPassword);
 
   const loginSubmit = document.createElement("input");
@@ -72,6 +72,12 @@ export function login() {
   loginGoogleButton.classList.add("loginGoogleButton");
   loginButtonsContainer.appendChild(loginGoogleButton);
 
+  //Imagen botón de Google ****
+  const googleBtn = document.createElement("img");
+ googleBtn.classList.add("googleImgButton");
+  googleBtn.setAttribute("src", "../images/googlelogo.png");
+  loginGoogleButton.appendChild(googleBtn);
+
   // Funcionalidad boton logInGoogle
   loginGoogleButton.addEventListener("click", logInGoogle);
 
@@ -80,10 +86,22 @@ export function login() {
   loginFacebookButton.classList.add("loginFacebookButton");
   loginButtonsContainer.appendChild(loginFacebookButton);
 
+    //Imagen botón de Facebook ****
+    const facebookBtn = document.createElement("img");
+   facebookBtn.classList.add("facebookImgButton");
+    facebookBtn.setAttribute("src", "../images/fblogo.png");
+     loginFacebookButton.appendChild(facebookBtn);
+
   //Botón de Apple
   const loginAppleButton = document.createElement("button");
   loginAppleButton.classList.add("loginAppleButton");
   loginButtonsContainer.appendChild(loginAppleButton);
+
+   //Imagen botón de Apple ****
+   const appleBtn = document.createElement("img");
+   appleBtn.classList.add("appleImgButton");
+   appleBtn.setAttribute("src", "../images/applelogo.png");
+     loginAppleButton.appendChild(appleBtn);
 
   // Create account y olvidaste contraseña
 
