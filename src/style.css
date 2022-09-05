@@ -138,8 +138,8 @@
   width: 80%;
 }
 
-/*Botón de Google*/
-.loginGoogleButton {
+/*Estilo de todos los botones del login*/
+.loginButtons {
   height: 3.2em;
   width: 4.8em;
   border: none;
@@ -153,28 +153,10 @@
   width: 1.8em;
 }
 
-/*Botón de Facebook*/
-.loginFacebookButton {
-  height: 3.2em;
-  width: 4.8em;
-  border: none;
-  border-radius: 8px;
-  padding: 2%;
-}
-
-/*Imagen del botón de Facebook*/
-.facebookImgButton {
+/*Imagen del botón de Meta*/
+.MetaImgButton {
   height: 1.8em;
   width: 1.8em;
-}
-
-/*Botón de Apple*/
-.loginAppleButton {
-  height: 3.2em;
-  width: 4.8em;
-  border: none;
-  border-radius: 8px;
-  padding: 2%;
 }
 
 /*Imagen del botón de Apple*/
@@ -204,4 +186,5 @@
   font-family: outfit;
   font-size: 0.8rem;
   margin-top: 1em;
+  text-decoration: none;
 }

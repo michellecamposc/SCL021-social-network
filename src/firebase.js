@@ -19,7 +19,7 @@ const firebaseConfig = {
   storageBucket: "gowildnature-f8558.appspot.com",
   messagingSenderId: "234342302640",
   appId: "1:234342302640:web:cb50e19dc5d4c88010cc75",
-  measurementId: "G-C2FMW2388X"
+  measurementId: "G-C2FMW2388X",
 };
 
 // Initialize Firebase

@@ -3,39 +3,47 @@
 import { logInGoogle } from "../firebase.js";
 
 export function login() {
+  //Contenedor principal
   const loginContainer = document.createElement("div");
   loginContainer.classList.add("loginContainer");
 
+  //Sección del logo
   const headerLogin = document.createElement("div");
   headerLogin.classList.add("headerLogin");
   loginContainer.appendChild(headerLogin);
 
+  //Logo
   const logo = document.createElement("img");
   logo.setAttribute("src", "../images/logoblanco.png");
   logo.classList.add("logoBlanco");
   headerLogin.appendChild(logo);
 
+  //Título
   const logoTitle = document.createElement("h1");
   logoTitle.textContent = "Go Wild Nature";
   logoTitle.classList.add("logoTitle");
   headerLogin.appendChild(logoTitle);
 
+  //Formulario del login
   const form = document.createElement("form");
   form.classList.add("form");
   loginContainer.appendChild(form);
 
+  //Input mail
   const inputMail = document.createElement("input");
   inputMail.classList.add("inputMail");
   inputMail.setAttribute("type", "email");
   inputMail.setAttribute("placeholder", "   Email");
   form.appendChild(inputMail);
 
+  //Input contraseña
   const inputPassword = document.createElement("input");
   inputPassword.classList.add("inputPassword");
   inputPassword.setAttribute("type", "password");
   inputPassword.setAttribute("placeholder", "   Password");
   form.appendChild(inputPassword);
 
+  //Botón de login
   const loginSubmit = document.createElement("input");
   loginSubmit.classList.add("loginSubmit");
   loginSubmit.setAttribute("type", "submit");
@@ -69,39 +77,39 @@ export function login() {
 
   //Botón de Google
   const loginGoogleButton = document.createElement("button");
-  loginGoogleButton.classList.add("loginGoogleButton");
+  loginGoogleButton.classList.add("loginButtons");
   loginButtonsContainer.appendChild(loginGoogleButton);
 
   //Imagen botón de Google ****
   const googleBtn = document.createElement("img");
- googleBtn.classList.add("googleImgButton");
+  googleBtn.classList.add("googleImgButton");
   googleBtn.setAttribute("src", "../images/googlelogo.png");
   loginGoogleButton.appendChild(googleBtn);
 
   // Funcionalidad boton logInGoogle
   loginGoogleButton.addEventListener("click", logInGoogle);
 
-  // Botón de Facebook
-  const loginFacebookButton = document.createElement("button");
-  loginFacebookButton.classList.add("loginFacebookButton");
-  loginButtonsContainer.appendChild(loginFacebookButton);
+  // Botón de Meta
+  const loginMetaButton = document.createElement("button");
+  loginMetaButton.classList.add("loginButtons");
+  loginButtonsContainer.appendChild(loginMetaButton);
 
-    //Imagen botón de Facebook ****
-    const facebookBtn = document.createElement("img");
-   facebookBtn.classList.add("facebookImgButton");
-    facebookBtn.setAttribute("src", "../images/fblogo.png");
-     loginFacebookButton.appendChild(facebookBtn);
+  //Imagen botón de Meta ****
+  const MetaBtn = document.createElement("img");
+  MetaBtn.classList.add("MetaImgButton");
+  MetaBtn.setAttribute("src", "../images/fblogo.png");
+  loginMetaButton.appendChild(MetaBtn);
 
   //Botón de Apple
   const loginAppleButton = document.createElement("button");
-  loginAppleButton.classList.add("loginAppleButton");
+  loginAppleButton.classList.add("loginButtons");
   loginButtonsContainer.appendChild(loginAppleButton);
 
-   //Imagen botón de Apple ****
-   const appleBtn = document.createElement("img");
-   appleBtn.classList.add("appleImgButton");
-   appleBtn.setAttribute("src", "../images/applelogo.png");
-     loginAppleButton.appendChild(appleBtn);
+  //Imagen botón de Apple ****
+  const appleBtn = document.createElement("img");
+  appleBtn.classList.add("appleImgButton");
+  appleBtn.setAttribute("src", "../images/applelogo.png");
+  loginAppleButton.appendChild(appleBtn);
 
   // Create account y olvidaste contraseña
 
@@ -109,8 +117,9 @@ export function login() {
   accountAndPasswordContainer.classList.add("accountAndPasswordContainer");
   loginContainer.appendChild(accountAndPasswordContainer);
 
-  const createAccount = document.createElement("p");
+  const createAccount = document.createElement("a");
   createAccount.textContent = "Create account";
+  createAccount.href = " ";
   createAccount.classList.add("accountAndPassword");
   accountAndPasswordContainer.appendChild(createAccount);
 
