@@ -13,13 +13,13 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCtWxhTpICIY-RZ1VR3Wn3MCcjRKgLEe8A",
-  authDomain: "gowildnature.firebaseapp.com",
-  projectId: "gowildnature",
-  storageBucket: "gowildnature.appspot.com",
-  messagingSenderId: "922062437535",
-  appId: "1:922062437535:web:938118ea8fe00a9ad576aa",
-  measurementId: "G-8FCG51PPXL",
+  apiKey: "AIzaSyBoDeLMhXONjyBQlNrxAlrO3FPIpZjSSMw",
+  authDomain: "gowildnature-f8558.firebaseapp.com",
+  projectId: "gowildnature-f8558",
+  storageBucket: "gowildnature-f8558.appspot.com",
+  messagingSenderId: "234342302640",
+  appId: "1:234342302640:web:cb50e19dc5d4c88010cc75",
+  measurementId: "G-C2FMW2388X"
 };
 
 // Initialize Firebase

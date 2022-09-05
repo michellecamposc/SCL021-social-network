@@ -41,7 +41,7 @@
 /*Cambie el width para que no estuviera aplastado*/
 .logoBlanco {
   height: 22%;
-  width: 18.5%; 
+  width: 18.5%;
 }
 
 .logoTitle {
@@ -67,20 +67,15 @@
   font-family: outfit;
   font-size: medium;
   color: #ffffff;
-
 }
 
-
-/* Aquí se ven los -iconos- las imágenes pero cambia la fuente del placeholder */
 /*Agregue icono inputMail*/
 .inputMail::placeholder {
-  /*font-size: small;*/
   color: #ffffffc4;
- /* font-weight: 900; */
- font: var(--fa-font-solid);
- content: "\f007";
- font-size: 0.8rem;
- -webkit-font-smoothing: antialiased;
+  font: var(--fa-font-solid);
+  content: "\f007";
+  font-size: 0.8rem;
+  -webkit-font-smoothing: antialiased;
 }
 
 .inputPassword {
@@ -94,16 +89,13 @@
   color: #ffffff;
 }
 
-/* Aquí se ven las --los iconos-- imágenes pero cambia la fuente del placeholder */
 /*Agregue icono inputPassword*/
 .inputPassword::placeholder {
-  /*font-size: small;*/
   color: #ffffffc4;
- /* font-weight: 900; */
- font: var(--fa-font-solid);
- content: "\f084";
- font-size: 0.8rem;
- -webkit-font-smoothing: antialiased;
+  font: var(--fa-font-solid);
+  content: "\f084";
+  font-size: 0.8rem;
+  -webkit-font-smoothing: antialiased;
 }
 
 .loginSubmit {
@@ -118,7 +110,6 @@
 }
 
 /* Sing up sección*/
-
 .signUpContainer {
   display: flex;
   justify-content: space-evenly;
@@ -158,8 +149,8 @@
 
 /*Imagen del botón de Google*/
 .googleImgButton {
-    height: 1.8em;
-    width: 1.8em;
+  height: 1.8em;
+  width: 1.8em;
 }
 
 /*Botón de Facebook*/
@@ -172,9 +163,9 @@
 }
 
 /*Imagen del botón de Facebook*/
-.facebookImgButton{
-    height: 1.8em;
-    width: 1.8em;
+.facebookImgButton {
+  height: 1.8em;
+  width: 1.8em;
 }
 
 /*Botón de Apple*/
@@ -187,10 +178,10 @@
 }
 
 /*Imagen del botón de Apple*/
-.appleImgButton{
-    height: 2.1em;
-    width: 1.8em;
-    margin-top: -8%;
+.appleImgButton {
+  height: 2.1em;
+  width: 1.8em;
+  margin-top: -8%;
 }
 
 /* Crear una cuenta y olvidar contraseña*/
