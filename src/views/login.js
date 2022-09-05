@@ -13,10 +13,10 @@ export function login() {
   loginContainer.appendChild(headerLogin);
 
   //Logo
-  const logo = document.createElement("img");
-  logo.setAttribute("src", "../images/logoblanco.png");
-  logo.classList.add("logoBlanco");
-  headerLogin.appendChild(logo);
+  const loginLogo = document.createElement("div");
+  // logo.setAttribute("src", "../images/logoblanco.png");
+  loginLogo.classList.add("loginLogo");
+  headerLogin.appendChild(loginLogo);
 
   //Título
   const logoTitle = document.createElement("h1");

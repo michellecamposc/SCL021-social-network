@@ -41,20 +41,24 @@
   flex-direction: column;
 }
 /*Cambie el width para que no estuviera aplastado*/
-.logoBlanco {
-  height: 22%;
-  width: 18.5%;
+.loginLogo {
+  height: 35%;
+  width: 30%;
+  background-image: url(images/logoazul.png);
+  background-size: cover;
 }
 
 .logoTitle {
-  color: #ffffff;
+  color: #6a88a4;
   font-family: bowlby one SC;
 }
 
 /*Formulario del login*/
 .form {
   height: 30%;
-  width: 73%;
+  width: 45%;
+  padding-right: 15%;
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -64,16 +68,16 @@
   padding-bottom: 2%;
   background: none;
   border: none;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid #6a88a4;
   outline: 0px;
   font-family: outfit;
   font-size: medium;
-  color: #ffffff;
+  color: #7B8298;
 }
 
 /*Agregue icono inputMail*/
 .inputMail::placeholder {
-  color: #ffffffc4;
+  color: #7b82989c;
   font: var(--fa-font-solid);
   content: "\f007";
   font-size: 0.8rem;
@@ -84,16 +88,16 @@
   padding-bottom: 2%;
   background: none;
   border: none;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid #6a88a4;
   outline: 0px;
   font-family: outfit;
   font-size: medium;
-  color: #ffffff;
+  color: #7B8298;
 }
 
 /*Agregue icono inputPassword*/
 .inputPassword::placeholder {
-  color: #ffffffc4;
+  color: #7b82989c;
   font: var(--fa-font-solid);
   content: "\f084";
   font-size: 0.8rem;
@@ -104,10 +108,9 @@
   height: 15%;
   border-radius: 40px;
   border: none;
-  color: rgba(0, 0, 0, 0.63);
-  background-color: rgba(245, 245, 245, 0.78);
+  color: #ffffff;
+  background-color: #6a88a4;
   font-family: outfit;
-  font-weight: 900;
   font-size: medium;
 }
 
@@ -119,13 +122,13 @@
   width: 80%;
 }
 .signupOption {
-  color: rgba(255, 255, 255, 1);
+  color: #7B8298;
   font-family: outfit;
   font-size: 0.8rem;
 }
 
 .signUpLines {
-  border-top: thin solid rgba(255, 255, 255, 1);
+  border-top: thin solid #7B8298;
   height: 25%;
   width: 5em;
   margin: auto;
@@ -179,12 +182,12 @@
 }
 
 .verticalLine {
-  border-left: thin solid rgba(255, 255, 255, 1);
+  border-left: thin solid #7B8298;
   height: 125%;
 }
 
 .accountAndPassword {
-  color: rgba(255, 255, 255, 1);
+  color: #7B8298;
   font-family: outfit;
   font-size: 0.8rem;
   margin-top: 1em;
