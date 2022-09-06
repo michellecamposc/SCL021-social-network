@@ -1,9 +1,9 @@
-// Este es el punto de entrada de tu aplicacion
-import { login } from "./views/login.js";
-import { createAccount } from "./views/createAccount.js";
+import { router } from "./views/components/router.js";
 
-//Impresión del login en contenedor creado en HTML
-const rootContainer = document.getElementById("root");
-rootContainer.appendChild(login());
+window.addEventListener('hashchange', () => {
+    router(window.location.hash);
+  });
 
-//Impresión del create account
+  window.addEventListener('load', () => {
+    router(window.location.hash);
+  });

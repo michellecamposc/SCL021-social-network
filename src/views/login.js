@@ -1,12 +1,12 @@
 // eslint import/no-unresolved: [2, { ignore: ['gstatic'] }]
 
-import { logInGoogle } from "../firebase.js";
+import { logInGoogle } from "./components/firebase.js";
 
 export function login() {
   //Contenedor principal
   const loginContainer = document.createElement("div");
   loginContainer.classList.add("loginContainer");
-
+ 
   //Sección del logo
   const headerLogin = document.createElement("div");
   headerLogin.classList.add("headerLogin");
@@ -119,7 +119,7 @@ export function login() {
 
   const createAccount = document.createElement("a");
   createAccount.textContent = "Create account";
-  createAccount.href = " ";
+  createAccount.href = "#/createAccount"; 
   createAccount.classList.add("accountAndPassword");
   accountAndPasswordContainer.appendChild(createAccount);
 
@@ -131,6 +131,12 @@ export function login() {
   forgetPassword.textContent = "Forget Password";
   forgetPassword.classList.add("accountAndPassword");
   accountAndPasswordContainer.appendChild(forgetPassword);
+
+  // Aquí se insertará el contenido segun la página en que nos encontremos//*** 
+/*const content = document.createElement("content");
+content.id = content;
+loginContainer.appendChild(content);*/
+
 
   return loginContainer;
 }

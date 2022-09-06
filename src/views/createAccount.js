@@ -12,6 +12,7 @@ export function createAccount() {
   const backArrow = document.createElement("img");
   backArrow.classList.add("backArrow");
   backArrow.setAttribute("src", "../images/backArrow.png");
+  backArrow.id = ("backLogin");
   headerRegister.appendChild(backArrow);
 
   //Texto crear cuenta
@@ -29,7 +30,7 @@ export function createAccount() {
   const inputNameRegister = document.createElement("input");
   inputNameRegister.classList.add("inputNameRegister");
   inputNameRegister.setAttribute("type", "text");
-  inputNameRegister.setAttribute("placeholder", "Full name");
+  inputNameRegister.setAttribute("placeholder", "   Full name");
   registerForm.appendChild(inputNameRegister);
 
   //Input Mail
@@ -69,5 +70,6 @@ export function createAccount() {
   singUp.setAttribute("value", "Sing up");
   registerForm.appendChild(singUp);
 
-  return createAccount;
+  return registerContainer;
 }
+

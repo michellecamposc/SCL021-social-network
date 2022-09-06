@@ -188,3 +188,32 @@
       text-decoration: none;
     }
     }
+
+
+/* Create account styles */
+
+.registerTitle {
+  color: #ffffff;
+   font-family: bowlby one SC;
+ }
+ 
+ .inputNameRegister {
+   padding-bottom: 2%;
+   background: none;
+   border: none;
+   border-bottom: 1px solid #ffffff;
+   outline: 0px;
+   font-family: outfit;
+   font-size: medium;
+   color: #ffffff;
+ }
+ 
+ .inputNameRegister::placeholder {
+   color: #ffffff;
+   font: var(--fa-font-solid);
+   content: "\f084";
+   font-size: 0.8rem;
+   -webkit-font-smoothing: antialiased;
+ }
+ 
+ 
