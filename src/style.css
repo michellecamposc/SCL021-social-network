@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: self-end;
+  align-items: flex-end;
   background-image: url(images/loginpicture.jpg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -72,7 +72,7 @@
   outline: 0px;
   font-family: outfit;
   font-size: medium;
-  color: #7B8298;
+  color: #7b8298;
 }
 
 /*Agregue icono inputMail*/
@@ -92,7 +92,7 @@
   outline: 0px;
   font-family: outfit;
   font-size: medium;
-  color: #7B8298;
+  color: #7b8298;
 }
 
 /*Agregue icono inputPassword*/
@@ -122,13 +122,13 @@
   width: 80%;
 }
 .signupOption {
-  color: #7B8298;
+  color: #7b8298;
   font-family: outfit;
   font-size: 0.8rem;
 }
 
 .signUpLines {
-  border-top: thin solid #7B8298;
+  border-top: thin solid #7b8298;
   height: 25%;
   width: 5em;
   margin: auto;
@@ -182,23 +182,36 @@
 }
 
 .verticalLine {
-  border-left: thin solid #7B8298;
+  border-left: thin solid #7b8298;
   height: 125%;
 }
 
 .accountAndPassword {
-  color: #7B8298;
+  color: #7b8298;
   font-family: outfit;
   font-size: 0.8rem;
   margin-top: 1em;
   text-decoration: none;
 }
 
-
 /* Create account styles */
 
+/*Fondo de pantalla*/
+.registerContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url(images/loginpicture.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+}
+
 .registerTitle {
- color: #ffffff;
+  color: #ffffff;
   font-family: bowlby one SC;
 }
 
@@ -210,7 +223,7 @@
   outline: 0px;
   font-family: outfit;
   font-size: medium;
-  color: #7B8298;
+  color: #7b8298;
 }
 
 .inputNameRegister::placeholder {
@@ -220,4 +233,3 @@
   font-size: 0.8rem;
   -webkit-font-smoothing: antialiased;
 }
-

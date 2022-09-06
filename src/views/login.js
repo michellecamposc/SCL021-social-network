@@ -6,7 +6,7 @@ export function login() {
   //Contenedor principal
   const loginContainer = document.createElement("div");
   loginContainer.classList.add("loginContainer");
- 
+
   //Sección del logo
   const headerLogin = document.createElement("div");
   headerLogin.classList.add("headerLogin");
@@ -25,7 +25,7 @@ export function login() {
   headerLogin.appendChild(logoTitle);
 
   //Formulario del login
-  const form = document.createElement("form");
+  const form = document.createElement("for  m");
   form.classList.add("form");
   loginContainer.appendChild(form);
 
@@ -119,7 +119,7 @@ export function login() {
 
   const createAccount = document.createElement("a");
   createAccount.textContent = "Create account";
-  createAccount.href = "#/createAccount"; 
+  createAccount.href = "#/createAccount";
   createAccount.classList.add("accountAndPassword");
   accountAndPasswordContainer.appendChild(createAccount);
 
@@ -132,11 +132,10 @@ export function login() {
   forgetPassword.classList.add("accountAndPassword");
   accountAndPasswordContainer.appendChild(forgetPassword);
 
-  // Aquí se insertará el contenido segun la página en que nos encontremos//*** 
-/*const content = document.createElement("content");
-content.id = content;
-loginContainer.appendChild(content);*/
-
+  // Aquí se insertará el contenido segun la página en que nos encontremos//***
+  /*const content = document.createElement("content");
+  content.id = content;
+  loginContainer.appendChild(content);*/
 
   return loginContainer;
 }
