@@ -204,16 +204,17 @@
   }
   /*Sección de flecha y create account*/
   .headerRegister {
-    height: 30%;
+    height: 40%;
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
   }
 
   .backArrow {
     height: 2em;
-    margin-top: 2%;
+    margin-right: 2%;    
   }
 
   .registerTitle {
@@ -223,7 +224,7 @@
 
   /*Formulario*/
   .registerForm {
-    height: 30%;
+    height: 60%;
     width: 73%;
     padding: 0%;
     margin: 0%;
@@ -251,16 +252,18 @@
 
   /*Check box*/
   .checkBoxContainer {
-    height: 30%;
+    height: 10%;
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    align-items: flex-start;
     font-family: outfit;
   }
 
   .checkBox {
-    background-color: rgba(245, 245, 245, 0.78);
+    margin: 2% 5% 0% 0%;
+    background: rgba(245, 245, 245, 0.78);
   }
 
   .condition {
@@ -270,7 +273,7 @@
 
   /*Botón Sing up*/
   .singUpButton {
-    height: 15%;
+    height: 8%;
     border-radius: 40px;
     border: none;
     color: rgba(0, 0, 0, 0.63);

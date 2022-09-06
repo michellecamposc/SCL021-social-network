@@ -195,40 +195,97 @@
 
 /* Create account styles */
 
-/*Fondo de pantalla*/
-.registerContainer {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  background-image: url(images/loginpicture.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: left;
-}
+  /*Contenedor create account*/
+  .registerContainer {
+    width: 100%;
+    height: 100vh;
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(images/createaccount.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  /*Sección de flecha y create account*/
+  .headerRegister {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 
-.registerTitle {
-  color: #ffffff;
-  font-family: bowlby one SC;
-}
+  .backArrow {
+    height: 2em;
+    margin-right: 2%;    
+  }
 
-.inputNameRegister {
-  padding-bottom: 2%;
-  background: none;
-  border: none;
-  border-bottom: 1px solid #6a88a4;
-  outline: 0px;
-  font-family: outfit;
-  font-size: medium;
-  color: #7b8298;
-}
+  .registerTitle {
+    color: #ffffff;
+    font-family: bowlby one SC;
+  }
 
-.inputNameRegister::placeholder {
-  color: #7b82989c;
-  font: var(--fa-font-solid);
-  content: "\f084";
-  font-size: 0.8rem;
-  -webkit-font-smoothing: antialiased;
-}
+  /*Formulario*/
+  .registerForm {
+    height: 60%;
+    width: 73%;
+    padding: 0%;
+    margin: 0%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .inputNameRegister {
+    padding-bottom: 2%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    outline: 0px;
+    color: #ffffff;
+  }
+
+  .inputNameRegister::placeholder {
+    color: rgba(255, 255, 255, 0.61);
+    font: var(--fa-font-solid);
+    content: "\f084";
+    font-size: 0.8rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /*Check box*/
+  .checkBoxContainer {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: outfit;
+  }
+
+  .checkBox {
+    margin: 2% 5% 0% 0%;
+    background: rgba(245, 245, 245, 0.78);
+  }
+
+  .condition {
+    font-family: outfit;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  /*Botón Sing up*/
+  .singUpButton {
+    height: 8%;
+    border-radius: 40px;
+    border: none;
+    color: rgba(0, 0, 0, 0.63);
+    background-color: rgba(245, 245, 245, 0.78);
+    font-family: outfit;
+    font-weight: 900;
+    font-size: medium;
+  }
+  
