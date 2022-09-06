@@ -25,7 +25,7 @@ export function login() {
   headerLogin.appendChild(logoTitle);
 
   //Formulario del login
-  const form = document.createElement("for  m");
+  const form = document.createElement("form");
   form.classList.add("form");
   loginContainer.appendChild(form);
 

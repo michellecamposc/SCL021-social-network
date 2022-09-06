@@ -9,7 +9,7 @@
 /*Contenedor creado desde el HTML*/
 #root {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,13 +34,12 @@
 .headerLogin {
   height: 30%;
   padding-right: 15%;
-  /* margin: 12% 0% 14% 0%; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-/*Cambie el width para que no estuviera aplastado*/
+
 .loginLogo {
   height: 35%;
   width: 30%;
