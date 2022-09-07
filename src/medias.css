@@ -15,18 +15,33 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;    
+  }
+
+  .imgContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
     background-image: url(images/loginpicture.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    
+  }
+
+  .loginInformation {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
   }
 
   /*Contenedor con el logo y su título*/
   .headerLogin {
     height: 40%;
     width: 100%;
-    margin: 0% 0% 10% 0%;
     padding: 0%;
     display: flex;
     align-items: center;
@@ -41,6 +56,7 @@
   }
 
   .logoTitle {
+    margin: 0%;
     color: #ffffff;
     font-family: bowlby one SC;
   }
@@ -110,7 +126,6 @@
   /* Sing up sección*/
   .signUpContainer {
     width: 80%;
-    margin: 0%;
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
@@ -200,7 +215,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(images/createaccount.png);
+    background-image: url(images/backgroundregister.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

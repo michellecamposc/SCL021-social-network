@@ -7,10 +7,21 @@ export function login() {
   const loginContainer = document.createElement("div");
   loginContainer.classList.add("loginContainer");
 
+  //Contenedor de imagen de fondo
+  const imgContainer = document.createElement("div");
+  imgContainer.classList.add("imgContainer");
+  loginContainer.appendChild(imgContainer);
+
+  //Contenedor de la información del login
+  const loginInformation = document.createElement("div");
+  loginInformation.classList.add("loginInformation");
+  loginContainer.appendChild(loginInformation)
+
+
   //Sección del logo
   const headerLogin = document.createElement("div");
   headerLogin.classList.add("headerLogin");
-  loginContainer.appendChild(headerLogin);
+  loginInformation.appendChild(headerLogin);
 
   //Logo
   const loginLogo = document.createElement("div");
@@ -27,7 +38,7 @@ export function login() {
   //Formulario del login
   const form = document.createElement("form");
   form.classList.add("form");
-  loginContainer.appendChild(form);
+  loginInformation.appendChild(form);
 
   //Input mail
   const inputMail = document.createElement("input");
@@ -53,7 +64,7 @@ export function login() {
   //Sección de Sign up
   const signUpContainer = document.createElement("div");
   signUpContainer.classList.add("signUpContainer");
-  loginContainer.appendChild(signUpContainer);
+  loginInformation.appendChild(signUpContainer);
 
   const leftLine = document.createElement("div");
   leftLine.classList.add("signUpLines");
@@ -73,7 +84,7 @@ export function login() {
   //Contenedor con todos los botones
   const loginButtonsContainer = document.createElement("div");
   loginButtonsContainer.classList.add("loginButtonsContainer");
-  loginContainer.appendChild(loginButtonsContainer);
+  loginInformation.appendChild(loginButtonsContainer);
 
   //Botón de Google
   const loginGoogleButton = document.createElement("button");
@@ -115,7 +126,7 @@ export function login() {
 
   const accountAndPasswordContainer = document.createElement("div");
   accountAndPasswordContainer.classList.add("accountAndPasswordContainer");
-  loginContainer.appendChild(accountAndPasswordContainer);
+  loginInformation.appendChild(accountAndPasswordContainer);
 
   const createAccount = document.createElement("a");
   createAccount.textContent = "Create account";
