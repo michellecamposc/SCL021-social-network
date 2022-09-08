@@ -15,8 +15,7 @@ export function login() {
   //Contenedor de la información del login
   const loginInformation = document.createElement("div");
   loginInformation.classList.add("loginInformation");
-  loginContainer.appendChild(loginInformation)
-
+  loginContainer.appendChild(loginInformation);
 
   //Sección del logo
   const headerLogin = document.createElement("div");
@@ -142,11 +141,6 @@ export function login() {
   forgetPassword.textContent = "Forget Password";
   forgetPassword.classList.add("accountAndPassword");
   accountAndPasswordContainer.appendChild(forgetPassword);
-
-  // Aquí se insertará el contenido segun la página en que nos encontremos//***
-  /*const content = document.createElement("content");
-  content.id = content;
-  loginContainer.appendChild(content);*/
 
   return loginContainer;
 }
