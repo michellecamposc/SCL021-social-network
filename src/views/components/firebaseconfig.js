@@ -1,15 +1,12 @@
 // eslint import/no-unresolved: [2, { ignore: ['gstatic'] }] */
-
+/*
 // importar modulos de firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
 import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
-  createUserWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
-export { logInGoogle };
-
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -41,27 +38,7 @@ const logInGoogle = () => {
       const errorCode = error.code;
 
       return errorCode;
-
-      
     });
 };
-export function registerAccount(name,email,password) {
- // let name = document.getElementById("nameAccount").value;
- // let email = document.getElementById("emailAccount").value;
- // let password = document.getElementById("PasswordAccount").value;
 
-const auth = getAuth();
-createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in
-    const user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log(errorCode);
-    console.log(errorMessage);
-    // ..
-  });
-}
+export { logInGoogle };*/

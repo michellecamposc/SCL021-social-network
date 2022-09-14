@@ -29,6 +29,7 @@ export function createAccount() {
   //Input Nombre
   const inputNameRegister = document.createElement("input");
   inputNameRegister.classList.add("inputNameRegister");
+  inputNameRegister.id ="nameAccount";
   inputNameRegister.setAttribute("type", "text");
   inputNameRegister.setAttribute("placeholder", "   Full name");
   registerForm.appendChild(inputNameRegister);
@@ -36,13 +37,16 @@ export function createAccount() {
   //Input Mail
   const inputMailRegister = document.createElement("input");
   inputMailRegister.classList.add("inputMail");
+  inputMailRegister.id="emailAccount";
   inputMailRegister.setAttribute("type", "email");
+  inputMailRegister.setAttribute("value", "");
   inputMailRegister.setAttribute("placeholder", "   Email");
   registerForm.appendChild(inputMailRegister);
 
   //Input contraseña
   const inputPasswordRegister = document.createElement("input");
   inputPasswordRegister.classList.add("inputPassword");
+  inputPasswordRegister.id = "PasswordAccount";
   inputPasswordRegister.setAttribute("type", "password");
   inputPasswordRegister.setAttribute("placeholder", "   Password");
   registerForm.appendChild(inputPasswordRegister);
