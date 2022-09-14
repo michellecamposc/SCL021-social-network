@@ -1,3 +1,5 @@
+//import { registerAccount } from "../main.js";
+
 export function createAccount() {
   //Contenedores de la sección crear cuenta
   const registerContainer = document.createElement("div");
@@ -28,6 +30,7 @@ export function createAccount() {
 
   //Input Nombre
   const inputNameRegister = document.createElement("input");
+  inputNameRegister.id = "nameAccount";
   inputNameRegister.classList.add("inputNameRegister");
   inputNameRegister.setAttribute("type", "text");
   inputNameRegister.setAttribute("placeholder", "   Full name");
@@ -36,6 +39,7 @@ export function createAccount() {
   //Input Mail
   const inputMailRegister = document.createElement("input");
   inputMailRegister.classList.add("inputMail");
+  inputMailRegister.id = "emailAccount";
   inputMailRegister.setAttribute("type", "email");
   inputMailRegister.setAttribute("placeholder", "   Email");
   registerForm.appendChild(inputMailRegister);
@@ -43,6 +47,7 @@ export function createAccount() {
   //Input contraseña
   const inputPasswordRegister = document.createElement("input");
   inputPasswordRegister.classList.add("inputPassword");
+  inputPasswordRegister.id = "PasswordAccount";
   inputPasswordRegister.setAttribute("type", "password");
   inputPasswordRegister.setAttribute("placeholder", "   Password");
   registerForm.appendChild(inputPasswordRegister);
@@ -64,11 +69,12 @@ export function createAccount() {
   checkBoxContainer.appendChild(condition);
 
   //Botón de registrarse
-  const singUp = document.createElement("input");
-  singUp.classList.add("singUpButton");
-  singUp.setAttribute("type", "submit");
-  singUp.setAttribute("value", "Sing up");
-  registerForm.appendChild(singUp);
+  const singUpButton = document.createElement("input");
+  singUpButton.classList.add("singUpButton");
+  singUpButton.setAttribute("type", "submit");
+  singUpButton.setAttribute("value", "Sing up");
+  singUpButton.id = "singUp";
+  registerForm.appendChild(singUpButton);
 
   return registerContainer;
 }

@@ -1,5 +1,5 @@
-import { createAccount } from "../createAccount.js";
-import { login } from "../login.js";
+import { createAccount } from "../views/createAccount.js";
+import { login } from "../views/login.js";
 
 export function router(hash) {
   //Impresión del login en contenedor creado en HTML

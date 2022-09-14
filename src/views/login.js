@@ -1,5 +1,3 @@
-// eslint import/no-unresolved: [2, { ignore: ['gstatic'] }]
-
 import { logInGoogle } from "./components/firebase.js";
 
 export function login() {
