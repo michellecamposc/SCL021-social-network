@@ -30,6 +30,7 @@ export function createAccount() {
 
   //Input Nombre
   const inputNameRegister = document.createElement("input");
+  inputNameRegister.id = "nameAccount";
   inputNameRegister.classList.add("inputNameRegister");
   inputNameRegister.setAttribute('id', 'name');
   inputNameRegister.setAttribute("type", "text");
@@ -69,11 +70,12 @@ export function createAccount() {
   checkBoxContainer.appendChild(condition);
 
   //Botón de registrarse
-  const singUp = document.createElement("input");
-  singUp.classList.add("singUpButton");
-  singUp.setAttribute("type", "submit");
-  singUp.setAttribute("value", "Sing up");
-  registerForm.appendChild(singUp);
+  const singUpButton = document.createElement("input");
+  singUpButton.classList.add("singUpButton");
+  singUpButton.setAttribute("type", "submit");
+  singUpButton.setAttribute("value", "Sing up");
+  singUpButton.id = "singUp";
+  registerForm.appendChild(singUpButton);
 
 
     // info para registrar usuario

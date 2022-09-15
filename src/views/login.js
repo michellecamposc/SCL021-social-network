@@ -156,6 +156,6 @@ export function login() {
   accountAndPasswordContainer.appendChild(forgetPassword);
 
   return loginContainer;
-};
+}
 
 export default login;
