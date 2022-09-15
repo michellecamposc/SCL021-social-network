@@ -60,6 +60,7 @@ export function login() {
   const loginSubmit = document.createElement("input");
   loginSubmit.classList.add("loginSubmit");
   loginSubmit.setAttribute("type", "submit");
+  loginSubmit.setAttribute("value", "Login");
   form.appendChild(loginSubmit);
 
   // Evento para iniciar sesion
