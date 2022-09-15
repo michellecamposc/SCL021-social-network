@@ -32,7 +32,7 @@ export function createAccount() {
   const inputNameRegister = document.createElement("input");
   inputNameRegister.id = "nameAccount";
   inputNameRegister.classList.add("inputNameRegister");
-  inputNameRegister.setAttribute('id', 'name');
+  inputNameRegister.setAttribute("id", "name");
   inputNameRegister.setAttribute("type", "text");
   inputNameRegister.setAttribute("placeholder", "   Full name");
   registerForm.appendChild(inputNameRegister);
@@ -40,7 +40,7 @@ export function createAccount() {
   //Input Mail
   const inputMailRegister = document.createElement("input");
   inputMailRegister.classList.add("inputMail");
-  inputMailRegister.setAttribute('id', 'email');
+  inputMailRegister.setAttribute("id", "email");
   inputMailRegister.setAttribute("type", "email");
   inputMailRegister.setAttribute("placeholder", "   Email");
   registerForm.appendChild(inputMailRegister);
@@ -48,7 +48,7 @@ export function createAccount() {
   //Input contraseña
   const inputPasswordRegister = document.createElement("input");
   inputPasswordRegister.classList.add("inputPassword");
-  inputPasswordRegister.setAttribute('id', 'password');
+  inputPasswordRegister.setAttribute("id", "password");
   inputPasswordRegister.setAttribute("type", "password");
   inputPasswordRegister.setAttribute("placeholder", "   Password");
   registerForm.appendChild(inputPasswordRegister);
@@ -69,26 +69,24 @@ export function createAccount() {
   condition.textContent = "Agreed to terms and conditions";
   checkBoxContainer.appendChild(condition);
 
-  //Botón de registrarse
-  const singUpButton = document.createElement("input");
-  singUpButton.classList.add("singUpButton");
-  singUpButton.setAttribute("type", "submit");
-  singUpButton.setAttribute("value", "Sing up");
-  singUpButton.id = "singUp";
-  registerForm.appendChild(singUpButton);
+  //Botón de registrarse cambiar nombre para que funcione
+  const singUp = document.createElement("input");
+  singUp.classList.add("singUpButton");
+  singUp.setAttribute("type", "submit");
+  singUp.setAttribute("value", "Sing up");
+  singUp.id = "singUp";
+  registerForm.appendChild(singUp);
 
-
-    // info para registrar usuario
-    singUp.addEventListener('click', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      //agregar if que compruebe y linkearlo con p vacio ---  usar return dentro del if
-      registerAccount(email, password);
-      console.log(email);
-      console.log(password);
-    });
-
-  return registerContainer;}
-  export default createAccount;
-
+  // info para registrar usuario
+  singUp.addEventListener("click", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    //agregar if que compruebe y linkearlo con p vacio ---  usar return dentro del if
+    registerAccount(email, password);
+    console.log(email);
+    console.log(password);
+  });
+  return registerContainer;
+}
+export default createAccount;
