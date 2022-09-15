@@ -1,3 +1,5 @@
+import { registerAccount } from "./components/firebaseauth.js";
+
 export function createAccount() {
   //Contenedores de la sección crear cuenta
   const registerContainer = document.createElement("div");
@@ -29,7 +31,7 @@ export function createAccount() {
   //Input Nombre
   const inputNameRegister = document.createElement("input");
   inputNameRegister.classList.add("inputNameRegister");
-  inputNameRegister.id ="nameAccount";
+  inputNameRegister.setAttribute('id', 'name');
   inputNameRegister.setAttribute("type", "text");
   inputNameRegister.setAttribute("placeholder", "   Full name");
   registerForm.appendChild(inputNameRegister);
@@ -37,16 +39,15 @@ export function createAccount() {
   //Input Mail
   const inputMailRegister = document.createElement("input");
   inputMailRegister.classList.add("inputMail");
-  inputMailRegister.id="emailAccount";
+  inputMailRegister.setAttribute('id', 'email');
   inputMailRegister.setAttribute("type", "email");
-  inputMailRegister.setAttribute("value", "");
   inputMailRegister.setAttribute("placeholder", "   Email");
   registerForm.appendChild(inputMailRegister);
 
   //Input contraseña
   const inputPasswordRegister = document.createElement("input");
   inputPasswordRegister.classList.add("inputPassword");
-  inputPasswordRegister.id = "PasswordAccount";
+  inputPasswordRegister.setAttribute('id', 'password');
   inputPasswordRegister.setAttribute("type", "password");
   inputPasswordRegister.setAttribute("placeholder", "   Password");
   registerForm.appendChild(inputPasswordRegister);
@@ -74,5 +75,18 @@ export function createAccount() {
   singUp.setAttribute("value", "Sing up");
   registerForm.appendChild(singUp);
 
-  return registerContainer;
-}
+
+    // info para registrar usuario
+    singUp.addEventListener('click', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      //agregar if que compruebe y linkearlo con p vacio ---  usar return dentro del if
+      registerAccount(email, password);
+      console.log(email);
+      console.log(password);
+    });
+
+  return registerContainer;}
+  export default createAccount;
+

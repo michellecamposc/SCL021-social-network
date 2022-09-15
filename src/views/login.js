@@ -1,6 +1,4 @@
-// eslint import/no-unresolved: [2, { ignore: ['gstatic'] }]
-
-import { logInGoogle } from "./components/firebase.js";
+import { logInWithGoogle, logInWithEmailAndPassword } from "./components/firebaseauth.js";
 
 export function login() {
   //Contenedor principal
@@ -43,12 +41,14 @@ export function login() {
   const inputMail = document.createElement("input");
   inputMail.classList.add("inputMail");
   inputMail.setAttribute("type", "email");
+  inputMail.setAttribute('id', 'email');
   inputMail.setAttribute("placeholder", "   Email");
   form.appendChild(inputMail);
 
   //Input contraseña
   const inputPassword = document.createElement("input");
   inputPassword.classList.add("inputPassword");
+  inputPassword.setAttribute('id', 'password');
   inputPassword.setAttribute("type", "password");
   inputPassword.setAttribute("placeholder", "   Password");
   form.appendChild(inputPassword);
@@ -57,8 +57,16 @@ export function login() {
   const loginSubmit = document.createElement("input");
   loginSubmit.classList.add("loginSubmit");
   loginSubmit.setAttribute("type", "submit");
-  loginSubmit.setAttribute("value", "Login");
   form.appendChild(loginSubmit);
+
+  // Info para iniciar sesion (NUEVO)
+  loginSubmit.addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    console.log({ email });
+    const password = document.getElementById('password').value;
+    logInWithEmailAndPassword(email, password);
+  });
 
   //Sección de Sign up
   const signUpContainer = document.createElement("div");
@@ -77,6 +85,12 @@ export function login() {
   const rightLine = document.createElement("div");
   rightLine.classList.add("signUpLines");
   signUpContainer.appendChild(rightLine);
+
+//Kes esto?
+  //const inputErrors = document.createElement('p');
+  //inputErrors.innerText = '';
+  //inputErrors.setAttribute('id', 'inputErrors');
+  //form.appendChild(inputErrors);
 
   // Sección de botones del login
 
@@ -97,7 +111,7 @@ export function login() {
   loginGoogleButton.appendChild(googleBtn);
 
   // Funcionalidad boton logInGoogle
-  loginGoogleButton.addEventListener("click", logInGoogle);
+  loginGoogleButton.addEventListener("click", logInWithGoogle);
 
   // Botón de Meta
   const loginMetaButton = document.createElement("button");
@@ -122,7 +136,6 @@ export function login() {
   loginAppleButton.appendChild(appleBtn);
 
   // Create account y olvidaste contraseña
-
   const accountAndPasswordContainer = document.createElement("div");
   accountAndPasswordContainer.classList.add("accountAndPasswordContainer");
   loginInformation.appendChild(accountAndPasswordContainer);
@@ -143,4 +156,6 @@ export function login() {
   accountAndPasswordContainer.appendChild(forgetPassword);
 
   return loginContainer;
-}
+};
+
+export default login;

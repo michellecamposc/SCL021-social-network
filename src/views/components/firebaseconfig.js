@@ -1,12 +1,5 @@
-// eslint import/no-unresolved: [2, { ignore: ['gstatic'] }] */
-/*
-// importar modulos de firebase
+// Importar modulos de firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -24,21 +17,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth();
-const provider = new GoogleAuthProvider();
+export { app };
 
-// auth a los usuarios con sus cuentas Google.
-const logInGoogle = () => {
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      return credential;
-    })
-    .catch((error) => {
-      const errorCode = error.code;
 
-      return errorCode;
-    });
-};
 
-export { logInGoogle };*/
+//Cambiar nombre a firebaseconfig.js
