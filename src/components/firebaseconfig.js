@@ -18,7 +18,3 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export { app };
-
-
-
-//Cambiar nombre a firebaseconfig.js

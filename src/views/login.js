@@ -1,4 +1,7 @@
-import { logInWithGoogle, logInWithEmailAndPassword } from "./components/firebaseauth.js";
+import {
+  logInWithGoogle,
+  logInWithEmailAndPassword,
+} from "../components/firebaseauth.js";
 
 export function login() {
   //Contenedor principal
@@ -41,14 +44,14 @@ export function login() {
   const inputMail = document.createElement("input");
   inputMail.classList.add("inputMail");
   inputMail.setAttribute("type", "email");
-  inputMail.setAttribute('id', 'email');
+  inputMail.setAttribute("id", "email");
   inputMail.setAttribute("placeholder", "   Email");
   form.appendChild(inputMail);
 
   //Input contraseña
   const inputPassword = document.createElement("input");
   inputPassword.classList.add("inputPassword");
-  inputPassword.setAttribute('id', 'password');
+  inputPassword.setAttribute("id", "password");
   inputPassword.setAttribute("type", "password");
   inputPassword.setAttribute("placeholder", "   Password");
   form.appendChild(inputPassword);
@@ -59,12 +62,11 @@ export function login() {
   loginSubmit.setAttribute("type", "submit");
   form.appendChild(loginSubmit);
 
-  // Info para iniciar sesion (NUEVO)
-  loginSubmit.addEventListener('click', (e) => {
+  // Evento para iniciar sesion
+  loginSubmit.addEventListener("click", (e) => {
     e.preventDefault();
-    const email = document.getElementById('email').value;
-    console.log({ email });
-    const password = document.getElementById('password').value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
     logInWithEmailAndPassword(email, password);
   });
 
@@ -86,12 +88,6 @@ export function login() {
   rightLine.classList.add("signUpLines");
   signUpContainer.appendChild(rightLine);
 
-//Kes esto?
-  //const inputErrors = document.createElement('p');
-  //inputErrors.innerText = '';
-  //inputErrors.setAttribute('id', 'inputErrors');
-  //form.appendChild(inputErrors);
-
   // Sección de botones del login
 
   //Contenedor con todos los botones
@@ -104,13 +100,13 @@ export function login() {
   loginGoogleButton.classList.add("loginButtons");
   loginButtonsContainer.appendChild(loginGoogleButton);
 
-  //Imagen botón de Google ****
+  //Imagen botón de Google 
   const googleBtn = document.createElement("img");
   googleBtn.classList.add("googleImgButton");
   googleBtn.setAttribute("src", "../images/googlelogo.png");
   loginGoogleButton.appendChild(googleBtn);
 
-  // Funcionalidad boton logInGoogle
+  // Evento para logearse con Google
   loginGoogleButton.addEventListener("click", logInWithGoogle);
 
   // Botón de Meta
@@ -118,7 +114,7 @@ export function login() {
   loginMetaButton.classList.add("loginButtons");
   loginButtonsContainer.appendChild(loginMetaButton);
 
-  //Imagen botón de Meta ****
+  //Imagen botón de Meta 
   const MetaBtn = document.createElement("img");
   MetaBtn.classList.add("MetaImgButton");
   MetaBtn.setAttribute("src", "../images/fblogo.png");
@@ -129,7 +125,7 @@ export function login() {
   loginAppleButton.classList.add("loginButtons");
   loginButtonsContainer.appendChild(loginAppleButton);
 
-  //Imagen botón de Apple ****
+  //Imagen botón de Apple 
   const appleBtn = document.createElement("img");
   appleBtn.classList.add("appleImgButton");
   appleBtn.setAttribute("src", "../images/applelogo.png");
@@ -140,6 +136,7 @@ export function login() {
   accountAndPasswordContainer.classList.add("accountAndPasswordContainer");
   loginInformation.appendChild(accountAndPasswordContainer);
 
+  //Link create account
   const createAccount = document.createElement("a");
   createAccount.textContent = "Create account";
   createAccount.href = "#/createAccount";
@@ -150,6 +147,7 @@ export function login() {
   verticalLine.classList.add("verticalLine");
   accountAndPasswordContainer.appendChild(verticalLine);
 
+  //Link olvidaste contraseña
   const forgetPassword = document.createElement("p");
   forgetPassword.textContent = "Forget Password";
   forgetPassword.classList.add("accountAndPassword");
@@ -157,5 +155,3 @@ export function login() {
 
   return loginContainer;
 }
-
-export default login;

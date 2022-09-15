@@ -1,4 +1,4 @@
-import { registerAccount } from "./components/firebaseauth.js";
+import { registerAccount } from "../components/firebaseauth.js";
 
 export function createAccount() {
   //Contenedores de la sección crear cuenta
@@ -17,7 +17,7 @@ export function createAccount() {
   backArrow.id = "backLogin";
   headerRegister.appendChild(backArrow);
 
-  //Texto crear cuenta
+  //Titulo crear cuenta
   const registerTitle = document.createElement("h1");
   registerTitle.textContent = "Create account";
   registerTitle.classList.add("registerTitle");
@@ -70,23 +70,20 @@ export function createAccount() {
   checkBoxContainer.appendChild(condition);
 
   //Botón de registrarse cambiar nombre para que funcione
-  const singUp = document.createElement("input");
-  singUp.classList.add("singUpButton");
-  singUp.setAttribute("type", "submit");
-  singUp.setAttribute("value", "Sing up");
-  singUp.id = "singUp";
-  registerForm.appendChild(singUp);
+  const signUpButton = document.createElement("input");
+  signUpButton.classList.add("signUpButton");
+  signUpButton.setAttribute("type", "submit");
+  signUpButton.setAttribute("value", "Sign up");
+  signUpButton.id = "signUpButton";
+  registerForm.appendChild(signUpButton);
 
-  // info para registrar usuario
-  singUp.addEventListener("click", (e) => {
-    e.preventDefault();
+  // Evento para enviar datos del registro
+  signUpButton.addEventListener("click", (e) => {
+    e.preventDefault(); //Investigar preventDefault
     const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    //agregar if que compruebe y linkearlo con p vacio ---  usar return dentro del if
-    registerAccount(email, password);
-    console.log(email);
-    console.log(password);
+    const password = document.getElementById("password").value;    
+    registerAccount(email, password);    
   });
   return registerContainer;
 }
-export default createAccount;
+
