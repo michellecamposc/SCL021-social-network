@@ -25,7 +25,6 @@ export function login() {
 
   //Logo
   const loginLogo = document.createElement("div");
-  // logo.setAttribute("src", "../images/logoblanco.png");
   loginLogo.classList.add("loginLogo");
   headerLogin.appendChild(loginLogo);
 
@@ -101,7 +100,7 @@ export function login() {
   loginGoogleButton.classList.add("loginButtons");
   loginButtonsContainer.appendChild(loginGoogleButton);
 
-  //Imagen botón de Google 
+  //Imagen botón de Google
   const googleBtn = document.createElement("img");
   googleBtn.classList.add("googleImgButton");
   googleBtn.setAttribute("src", "../images/googlelogo.png");
@@ -115,7 +114,7 @@ export function login() {
   loginMetaButton.classList.add("loginButtons");
   loginButtonsContainer.appendChild(loginMetaButton);
 
-  //Imagen botón de Meta 
+  //Imagen botón de Meta
   const MetaBtn = document.createElement("img");
   MetaBtn.classList.add("MetaImgButton");
   MetaBtn.setAttribute("src", "../images/fblogo.png");
@@ -126,7 +125,7 @@ export function login() {
   loginAppleButton.classList.add("loginButtons");
   loginButtonsContainer.appendChild(loginAppleButton);
 
-  //Imagen botón de Apple 
+  //Imagen botón de Apple
   const appleBtn = document.createElement("img");
   appleBtn.classList.add("appleImgButton");
   appleBtn.setAttribute("src", "../images/applelogo.png");

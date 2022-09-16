@@ -31,11 +31,24 @@ const logInWithEmailAndPassword = (email, password) => {
       // window.location.hash = '#/muro';
       const user = userCredential.user;
     })
-    //Identificar valores name,email,password y agregar condiciones para cada error (sección vacía)
     .catch((error) => {
       const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log("Falta tu mail");
+      // const errorMessage = error.message;
+      //Alertas en caso de error
+      switch (errorCode) {
+        case "auth/wrong-password":
+          alert("Wrong password");
+          break;
+        case "auth/user-not-found":
+          alert("The email is not registered");
+          break;
+        case "auth/invalid-email":
+          alert("Verify your email");
+          break;
+        case "auth/internal-error":
+          alert("Enter your password");
+          break;
+      }
     });
 };
 
@@ -54,9 +67,26 @@ const registerAccount = (email, password) => {
     })
     .catch((error) => {
       const errorCode = error.code;
-      const errorMessage = error.message;
-      //Identificar valores name,email,password y agregar condiciones para cada error (sección vacía)
-      console.log("Falta tu mail register");
+      // const errorMessage = error.message;
+
+      // Alertas en caso de errores
+      switch (errorCode) {
+        case "auth/email-already-in-use":
+          alert("The email address is already in use");
+          break;
+        case "auth/missing-email":
+          alert("Please enter your email");
+          break;
+        case "auth/invalid-email":
+          alert("Verify your email");
+          break;
+        case "auth/weak-password":
+          alert("Your password must be at least 6 characters");
+          break;
+        case "auth/internal-error":
+          alert("Enter your password");
+          break;
+      }
     });
 };
 
