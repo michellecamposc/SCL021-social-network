@@ -17,6 +17,10 @@ export function createAccount() {
   backArrow.id = "backLogin";
   headerRegister.appendChild(backArrow);
 
+  backArrow.addEventListener("click", () => {
+    history.back();
+  });
+
   //Titulo crear cuenta
   const registerTitle = document.createElement("h1");
   registerTitle.textContent = "Create account";
