@@ -6,7 +6,7 @@ import {
   signInWithEmailAndPassword,
   sendEmailVerification,
   onAuthStateChanged,
-  signOut
+  signOut,
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
 
 import { app } from "./firebaseconfig.js";
@@ -92,7 +92,7 @@ const registerAccount = (email, password) => {
       }
     });
 };
-//Observador
+//Observador: permite validar el estado de la sesión del usuario
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
@@ -108,16 +108,16 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-//Sign out
-const logout = () => { 
-  signOut(auth).then(() => {
-    window.location.hash = "#/login";
-  }).catch((error) => {
-    // An error happened.
-  });
-}
-
-
+//Función para cerrar sesión
+const logout = () => {
+  signOut(auth)
+    .then(() => {
+      window.location.hash = "#/login";
+    })
+    .catch((error) => {
+      // An error happened.
+    });
+};
 
 export {
   app,
@@ -125,5 +125,5 @@ export {
   registerAccount,
   logInWithGoogle,
   logInWithEmailAndPassword,
-  logout
+  logout,
 };
