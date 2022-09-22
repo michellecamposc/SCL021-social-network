@@ -1,3 +1,5 @@
+import {logout} from "../components/firebaseauth.js"
+
 export function createPost() {
   //Contenedor de todos los elemntos de la sección crear post y timeline
   const postContainer = document.createElement("div");
@@ -55,6 +57,10 @@ export function createPost() {
   const logoutButton = document.createElement("button");
   logoutButton.classList.add("logoutButton");
   timelineContainer.appendChild(logoutButton);
+
+  logoutButton.addEventListener("click", () => {
+    logout();
+  })
 
   return postContainer;
 }
