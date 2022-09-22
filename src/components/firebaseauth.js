@@ -5,9 +5,11 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   sendEmailVerification,
+  onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
 
-import { app } from "./firebaseconfig.js"; //Cambiar a firebaseconfig.js
+import { app } from "./firebaseconfig.js";
+import { router } from "./router.js";
 
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
@@ -89,6 +91,21 @@ const registerAccount = (email, password) => {
       }
     });
 };
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const uid = user.uid;
+    router("#/post");
+    window.location.hash = "#/post";
+    console.log("Ingresaste");
+  } else {
+    router("#/login");
+    window.location.hash = "#/login";
+    console.log("no estás logeado");
+  }
+});
 
 export {
   app,

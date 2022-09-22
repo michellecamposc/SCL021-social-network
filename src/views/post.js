@@ -11,7 +11,7 @@ export function createPost() {
   //Contedor con elementos de crear post
   const createPostContainer = document.createElement("div");
   createPostContainer.classList.add("createPostContainer");
-  createPostContainer.appendChild(createPostContainer);
+  postContainer.appendChild(createPostContainer);
 
   //Foto de perfil
   const profilePhoto = document.createElement("img");
