@@ -83,11 +83,10 @@ export function createAccount() {
 
   // Evento para enviar datos del registro
   signUpButton.addEventListener("click", (e) => {
-    e.preventDefault(); //Investigar preventDefault
+    e.preventDefault();
     const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;    
-    registerAccount(email, password);    
+    const password = document.getElementById("password").value;
+    registerAccount(email, password);
   });
   return registerContainer;
 }
-

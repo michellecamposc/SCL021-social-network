@@ -1,4 +1,5 @@
-import {logout} from "../components/firebaseauth.js"
+import { logout } from "../components/firebaseauth.js";
+import { showPost } from "../components/firebaseauth.js";
 
 export function createPost() {
   //Contenedor de todos los elemntos de la sección crear post y timeline
@@ -18,7 +19,7 @@ export function createPost() {
   //Titulo
   const titlePost = document.createElement("h3");
   titlePost.classList.add("titlePost");
-  titlePost.textContent = "Go Wild Nature"
+  titlePost.textContent = "Go Wild Nature";
   headerPost.appendChild(titlePost);
 
   //Contedor con elementos de crear post
@@ -40,6 +41,7 @@ export function createPost() {
   const inputCreatePost = document.createElement("input");
   inputCreatePost.classList.add("inputCreatePost");
   inputCreatePost.setAttribute("type", "text");
+  inputCreatePost.setAttribute("id", "inputPost");
   inputCreatePost.setAttribute("placeholder", "    What are you thinking?");
   userPost.appendChild(inputCreatePost);
 
@@ -57,15 +59,14 @@ export function createPost() {
   const addLocation = document.createElement("div");
   addLocation.classList.add("addLocation");
   extraContainer.appendChild(addLocation);
-  
+
   //Botón para publicar post
   const goButton = document.createElement("button");
   goButton.classList.add("goButton");
-  goButton.textContent = "Go"
+  goButton.textContent = "Go";
   extraContainer.appendChild(goButton);
 
-  //Contenedor de timeline
-
+  //Contenedor  principal de timeline
   const timelineContainer = document.createElement("div");
   timelineContainer.classList.add("timelineContainer");
   postContainer.appendChild(timelineContainer);
@@ -78,12 +79,20 @@ export function createPost() {
   //Boton de cerrar sesión
   const logoutButton = document.createElement("button");
   logoutButton.classList.add("logoutButton");
-  logoutButton.textContent = "Logout"
+  logoutButton.textContent = "Logout";
   logoutContainer.appendChild(logoutButton);
 
+  //Evento para cerrar sesión
   logoutButton.addEventListener("click", () => {
     logout();
-  })
+  });
+
+  // Evento que envía la información ingresada a la base de datos
+  goButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    const posting = document.getElementById("inputPost").value;
+    showPost(posting);
+  });
 
   return postContainer;
 }

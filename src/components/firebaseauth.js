@@ -9,8 +9,13 @@ import {
   signOut,
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
 
-import { app } from "./firebaseconfig.js";
+import { app, db } from "./firebaseconfig.js";
 import { router } from "./router.js";
+import {
+  collection,
+  addDoc,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js";
 
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
@@ -92,6 +97,7 @@ const registerAccount = (email, password) => {
       }
     });
 };
+
 //Observador: permite validar el estado de la sesión del usuario
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -115,8 +121,28 @@ const logout = () => {
       window.location.hash = "#/login";
     })
     .catch((error) => {
+      return error;
       // An error happened.
     });
+};
+
+// Función para agregar datos
+const showPost = async (posting) => {
+  const docRef = await addDoc(collection(db, "Post"), {
+    description: posting,
+    uid: auth.currentUser.uid,
+    name: auth.currentUser.displayName,
+  });
+  console.log("Data registrada ", docRef.id);
+  //document.getElementById("addPost").value = "   What are you thinking? ";
+};
+
+//Función para imprimir los datos en la app
+const printPost = async () => {
+  const querySnapshot = await getDocs(collection(db, "Post"));
+  querySnapshot.forEach((doc) => {
+    console.log(`${doc.id} => ${doc.data()}`);
+  });
 };
 
 export {
@@ -126,4 +152,6 @@ export {
   logInWithGoogle,
   logInWithEmailAndPassword,
   logout,
+  showPost,
+  printPost,
 };
