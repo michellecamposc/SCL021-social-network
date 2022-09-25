@@ -15,6 +15,7 @@ import {
   collection,
   addDoc,
   getDocs,
+  deleteDoc,
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js";
 
 const auth = getAuth();
@@ -146,13 +147,17 @@ const printPost = async (userPost) => {
   querySnapshot.forEach((doc) => {
     console.log(`${doc.id} => ${doc.data().description}`);
     userPost.innerHTML += `<div id="containerPost">
+    <p id="userName">${doc.data().name}</p>
     <p id="descriptionPost">${doc.data().description}</p>
     </div>`;
   });
   return userPost;
 };
-//Agregar luego cuando pongamos imagen a la colección
-//<img id="like" src="images/LogoManos.png"/>
+
+//Borrar datos
+function deletePost(id) {
+  deleteDoc(doc(db, "Post", id));
+}
 
 export {
   app,
@@ -163,4 +168,5 @@ export {
   logout,
   showPost,
   printPost,
+  deletePost,
 };

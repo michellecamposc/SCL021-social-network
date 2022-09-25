@@ -340,7 +340,7 @@
   }
 
   .userPost {
-    height: 60%;
+    height: 40%;
     width: 100%;
     display: flex;
     flex-flow: row wrap;
@@ -349,10 +349,11 @@
   }
 
   .profilePhoto {
-    height: 40%;
+    height: 55%;
     width: 17%;
     border-radius: 100%;
-    background-color: black;
+    background-image: url(images/profileImage.png);
+    background-size: cover;
   }
 
   .inputCreatePost {
@@ -375,26 +376,30 @@
 
   .extraContainer {
     height: 20%;
-    width: 100%;
+    width: 76%; /* de 100 a 76*/
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+    padding-left: 24%; /*nuevo*/
   }
 
-  .addImage {
-    height: 100%;
-    width: 10%;
-    background-color: grey;
+  /*Nuevo*/
+  .fa-image {
+    color: #7b8298;
+    opacity: 40%;
   }
-  .addLocation {
-    height: 100%;
-    width: 10%;
-    background-color: grey;
+
+  /*Nuevo*/
+  .fa-location-dot {
+    color: #7b8298;
+    opacity: 40%;
+    margin-left: -10%;
   }
 
   .goButton {
     height: 80%;
-    width: 35%;
+    width: 40%;
     background: linear-gradient(90deg, #02aab0 0%, #00cdac 100%);
     border-radius: 32px;
     border: none;
@@ -404,7 +409,7 @@
   }
 
   .userPostContainer {
-    height: 7.5%;
+    height: 45%;
     width: 90%;
     margin-top: 1.5em;
     flex-flow: column wrap;
@@ -415,11 +420,23 @@
     /*align-items: flex-end; /*Ojo que nos manda todo el contenido pa'bajo*/
   }
 
+  .printContainer {
+    height: 7%;
+    width: 90%;
+    margin-top: 1.5em;
+    flex-flow: column wrap;
+    background: rgba(245, 245, 245, 0.13);
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    box-shadow: 0px 3px 8px -5px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+  }
+
   .logoutContainer {
     height: 7%;
     width: 90%;
     display: flex;
     justify-content: flex-end;
+    margin-top: 1em;
   }
 
   .logoutButton {

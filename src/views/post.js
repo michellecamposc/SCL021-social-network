@@ -34,7 +34,8 @@ export function createPost() {
   createPostContainer.appendChild(userPost);
 
   //Foto de perfil
-  const profilePhoto = document.createElement("div");
+  const profilePhoto = document.createElement("img");
+  profilePhoto.setAttribute("id", "addImage");
   profilePhoto.classList.add("profilePhoto");
   userPost.appendChild(profilePhoto);
 
@@ -52,13 +53,15 @@ export function createPost() {
   createPostContainer.appendChild(extraContainer);
 
   //Opción de añadir imagen
-  const addImage = document.createElement("div");
+  const addImage = document.createElement("i");
   addImage.classList.add("addImage");
+  addImage.setAttribute("class", "fa-solid fa-image fa-xl");
   extraContainer.appendChild(addImage);
 
   //Opción para añadir ubicación
-  const addLocation = document.createElement("div");
+  const addLocation = document.createElement("i");
   addLocation.classList.add("addLocation");
+  addLocation.setAttribute("class", "fa-solid fa-location-dot fa-xl");
   extraContainer.appendChild(addLocation);
 
   //Botón para publicar post
