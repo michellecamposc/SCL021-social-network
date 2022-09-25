@@ -38,6 +38,7 @@ const logInWithEmailAndPassword = (email, password) => {
     .then((userCredential) => {
       // window.location.hash = '#/muro';
       const user = userCredential.user;
+      return user;
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -104,6 +105,7 @@ onAuthStateChanged(auth, (user) => {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;
+    console.log(uid);
     router("#/post");
     window.location.hash = "#/post";
     console.log("Ingresaste");
@@ -133,17 +135,24 @@ const showPost = async (posting) => {
     uid: auth.currentUser.uid,
     name: auth.currentUser.displayName,
   });
-  console.log("Data registrada ", docRef.id);
-  //document.getElementById("addPost").value = "   What are you thinking? ";
+  document.getElementById("inputPost").value = "";
+  console.log("Document written with ID: ", docRef.id);
 };
 
-//Función para imprimir los datos en la app
-const printPost = async () => {
+//Función para que se impriman los datos en el contenedor
+const printPost = async (userPost) => {
   const querySnapshot = await getDocs(collection(db, "Post"));
+  userPost.innerHTML = "";
   querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data()}`);
+    console.log(`${doc.id} => ${doc.data().description}`);
+    userPost.innerHTML += `<div id="containerPost">
+    <p id="descriptionPost">${doc.data().description}</p>
+    </div>`;
   });
+  return userPost;
 };
+//Agregar luego cuando pongamos imagen a la colección
+//<img id="like" src="images/LogoManos.png"/>
 
 export {
   app,

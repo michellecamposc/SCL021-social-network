@@ -1,5 +1,5 @@
 import { logout } from "../components/firebaseauth.js";
-import { showPost } from "../components/firebaseauth.js";
+import { showPost, printPost } from "../components/firebaseauth.js";
 
 export function createPost() {
   //Contenedor de todos los elemntos de la sección crear post y timeline
@@ -25,6 +25,7 @@ export function createPost() {
   //Contedor con elementos de crear post
   const createPostContainer = document.createElement("div");
   createPostContainer.classList.add("createPostContainer");
+  createPostContainer.setAttribute("id", "postContainer");
   postContainer.appendChild(createPostContainer);
 
   //Contenedor de foto e input
@@ -66,15 +67,16 @@ export function createPost() {
   goButton.textContent = "Go";
   extraContainer.appendChild(goButton);
 
-  //Contenedor  principal de timeline
-  const timelineContainer = document.createElement("div");
-  timelineContainer.classList.add("timelineContainer");
-  postContainer.appendChild(timelineContainer);
+  //Contenedor para cada post
+  const userPostContainer = document.createElement("div");
+  userPostContainer.classList.add("userPostContainer");
+  userPostContainer.setAttribute("id", "userPost");
+  postContainer.appendChild(userPostContainer);
 
   //Contenedor del botón logout
   const logoutContainer = document.createElement("div");
   logoutContainer.classList.add("logoutContainer");
-  timelineContainer.appendChild(logoutContainer);
+  postContainer.appendChild(logoutContainer);
 
   //Boton de cerrar sesión
   const logoutButton = document.createElement("button");
@@ -91,7 +93,9 @@ export function createPost() {
   goButton.addEventListener("click", (event) => {
     event.preventDefault();
     const posting = document.getElementById("inputPost").value;
+    const userPost = document.getElementById("userPost");
     showPost(posting);
+    printPost(userPost);
   });
 
   return postContainer;
