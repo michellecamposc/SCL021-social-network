@@ -146,9 +146,11 @@ const printPost = async (userPost) => {
   userPost.innerHTML = "";
   querySnapshot.forEach((doc) => {
     console.log(`${doc.id} => ${doc.data().description}`);
-    userPost.innerHTML += `<div id="containerPost">
-    <p id="userName">${doc.data().name}</p>
+    userPost.innerHTML += `<div id="userPostContainer">
+    <div id="containerPost">
+    <h6 id="userName">${doc.data().name}</h6>
     <p id="descriptionPost">${doc.data().description}</p>
+    </div>
     </div>`;
   });
   return userPost;

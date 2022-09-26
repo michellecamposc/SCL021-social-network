@@ -44,7 +44,7 @@ export function createPost() {
   inputCreatePost.classList.add("inputCreatePost");
   inputCreatePost.setAttribute("type", "text");
   inputCreatePost.setAttribute("id", "inputPost");
-  inputCreatePost.setAttribute("placeholder", "    What are you thinking?");
+  inputCreatePost.setAttribute("placeholder", "What are you thinking?");
   userPost.appendChild(inputCreatePost);
 
   //Contenedor de enlazar imagen, ubicación y boton GO
@@ -71,10 +71,10 @@ export function createPost() {
   extraContainer.appendChild(goButton);
 
   //Contenedor para cada post
-  const userPostContainer = document.createElement("div");
-  userPostContainer.classList.add("userPostContainer");
-  userPostContainer.setAttribute("id", "userPost");
-  postContainer.appendChild(userPostContainer);
+  const timelimeContainer = document.createElement("div");
+  timelimeContainer.classList.add("timelimeContainer");
+  timelimeContainer.setAttribute("id", "timelime");
+  postContainer.appendChild(timelimeContainer);
 
   //Contenedor del botón logout
   const logoutContainer = document.createElement("div");
@@ -96,7 +96,7 @@ export function createPost() {
   goButton.addEventListener("click", (event) => {
     event.preventDefault();
     const posting = document.getElementById("inputPost").value;
-    const userPost = document.getElementById("userPost");
+    const userPost = document.getElementById("timelime");
     showPost(posting);
     printPost(userPost);
   });
