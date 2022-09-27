@@ -457,6 +457,24 @@
     font-weight: lighter;
   }
 
+  #iconsContainer {
+    width: 70%;
+    padding: 2% 3% 2% 5%;
+    flex-flow: row wrap;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #pencilBtn {
+    
+  }
+
+  #likeBtn {
+  }
+
+  #trashBtn {
+  }
+
   .logoutContainer {
     height: 10%;
     width: 90%;

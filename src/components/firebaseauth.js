@@ -16,12 +16,14 @@ import {
   addDoc,
   getDocs,
   deleteDoc,
+  doc,
+  updateDoc
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js";
 
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
 
-//Función para iniciar/loggear a los usuarios con sus cuentas de Google. (Popup Google)
+//Función para loguearse con cuentas de Google. (Popup Google)
 const logInWithGoogle = () => {
   signInWithPopup(auth, provider)
     .then((result) => {
@@ -33,17 +35,16 @@ const logInWithGoogle = () => {
       return errorCode;
     });
 };
-//Login con email y password (Luego de crear una cuenta)
+//Función para loguearse con email y password (Luego de crear una cuenta)
 const logInWithEmailAndPassword = (email, password) => {
   signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // window.location.hash = '#/muro';
+    .then((userCredential) => {      
       const user = userCredential.user;
       return user;
     })
     .catch((error) => {
       const errorCode = error.code;
-      // const errorMessage = error.message;
+      
       //Alertas en caso de error
       switch (errorCode) {
         case "auth/wrong-password":
@@ -77,8 +78,7 @@ const registerAccount = (email, password) => {
     })
     .catch((error) => {
       const errorCode = error.code;
-      // const errorMessage = error.message;
-
+      
       // Alertas en caso de errores
       switch (errorCode) {
         case "auth/email-already-in-use":
@@ -100,11 +100,9 @@ const registerAccount = (email, password) => {
     });
 };
 
-//Observador: permite validar el estado de la sesión del usuario
+//Observador: permite validar el estado de la sesión de un usuario
 onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
+  if (user) {    
     const uid = user.uid;
     console.log(uid);
     router("#/post");
@@ -140,7 +138,7 @@ const showPost = async (posting) => {
   console.log("Document written with ID: ", docRef.id);
 };
 
-//Función para que se impriman los datos en el contenedor
+//Función para que se impriman los post en el contenedor
 const printPost = async (userPost) => {
   const querySnapshot = await getDocs(collection(db, "Post"));
   userPost.innerHTML = "";
@@ -151,15 +149,63 @@ const printPost = async (userPost) => {
     <h6 id="userName">${doc.data().name}</h6>
     <p id="descriptionPost">${doc.data().description}</p>
     </div>
+    <div id="iconsContainer"> 
+    <button id="pencilBtn" class = "postBtn" data-id="${doc.id}">Editar</button>
+    <button id="likeBtn" class = "postBtn">Likes</button>
+    <button id="trashBtn" class = "postBtn" data-id="${doc.id}">Eliminar</button>
+    </div>
     </div>`;
   });
-  return userPost;
+
+  //Evento de delegación para darle funcionalidad a los botones
+  const iconsContainer = userPost.querySelectorAll(".postBtn");
+  iconsContainer.forEach((icon) => {
+    icon.addEventListener("click", delegacion);
+    
+    function delegacion(e) {
+      e.preventDefault();      
+      const idBtn = e.target.id;
+      const idDoc = e.target.getAttribute("data-id");
+      console.log(idDoc);
+
+      switch (idBtn) {
+        case "trashBtn":
+          deletePost(idDoc);
+          console.log("diste click en eliminar");
+          break;
+        case "likeBtn":
+          console.log("diste click en like");
+          break;
+        case "pencilBtn":
+          editPosts(idDoc)
+          console.log("diste click en editar");
+          break;
+      }
+    }
+  });
 };
 
-//Borrar datos
+//Función borrar datos
 function deletePost(id) {
-  deleteDoc(doc(db, "Post", id));
+  deleteDoc(doc(db, "Post", id))
+    .then(() => {
+      console.log("exito al borrar");
+    })
+    .catch((error) => {
+      console.log("Hiciste click en eliminar: ", error);
+    });
 }
+
+//Función editar
+async function editPosts(id, input) {
+  const postEdit = doc(db, 'Post', id);
+  await updateDoc(postEdit, {
+    description: input,
+  });
+}
+
+
+
 
 export {
   app,
@@ -169,6 +215,5 @@ export {
   logInWithEmailAndPassword,
   logout,
   showPost,
-  printPost,
-  deletePost,
+  printPost,  
 };
