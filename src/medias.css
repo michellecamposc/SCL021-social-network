@@ -333,7 +333,7 @@
   }
 
   .createPostContainer {
-    height: 30%;
+    height: 25%;
     width: 100%;
     border-top: thin solid rgba(123, 130, 152, 0.22);
     border-bottom: thin solid rgba(123, 130, 152, 0.22);
@@ -349,16 +349,18 @@
   }
 
   .profilePhoto {
-    height: 55%;
-    width: 17%;
+    height: 70%;
+    width: 18%;
     border-radius: 100%;
     background-image: url(images/profileImage.png);
     background-size: cover;
   }
 
   .inputCreatePost {
-    height: 50%;
-    width: 65%;
+    height: 70%;
+    width: 58%;
+    margin: 0% 0% 2% 0%;
+    padding: 0% 6% 0% 6%;
     background: rgba(245, 245, 245, 0.13);
     border: 1px solid rgba(0, 0, 0, 0.13);
     box-shadow: 0px 3px 8px -5px rgba(0, 0, 0, 0.25);
@@ -375,16 +377,15 @@
   }
 
   .extraContainer {
-    height: 20%;
-    width: 76%; /* de 100 a 76*/
+    height: 25%;
+    width: 76%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding-left: 24%; /*nuevo*/
+    padding-left: 24%;
   }
 
-  /*Nuevo*/
   .fa-image {
     color: #7b8298;
     opacity: 40%;
@@ -408,22 +409,31 @@
     font-size: medium;
   }
 
-  .userPostContainer {
-    height: 45%;
+  .timelimeContainer {
+    height: 60%;
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgba(245, 245, 245, 0.13);
+    border-radius: 15px;
+  }
+
+  #userPostContainer {
     width: 90%;
     margin-top: 1.5em;
+    display: flex;
+    justify-content: right;
+    align-content: flex-end;
     flex-flow: column wrap;
     background: rgba(245, 245, 245, 0.13);
-    border: 1px solid rgba(0, 0, 0, 0.13);
-    box-shadow: 0px 3px 8px -5px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
-    /*align-items: flex-end; /*Ojo que nos manda todo el contenido pa'bajo*/
   }
 
   #containerPost {
-    height: 15%;
-    width: 90%;
-    margin-top: 1.5em;
+    width: 70%;
+    padding: 2% 3% 2% 5%;
     flex-flow: row wrap;
     background: rgba(245, 245, 245, 0.13);
     border: 1px solid rgba(0, 0, 0, 0.13);
@@ -432,32 +442,40 @@
   }
 
   #userName {
+    margin-bottom: 2%;
     color: rgba(0, 0, 0, 1);
     font-family: outfit;
-    font-size: medium;
+    font-size: 14px;
     font-weight: bold;
   }
 
   #descriptionPost {
+    word-wrap: break-word;
     color: rgba(0, 0, 0, 1);
     font-family: outfit;
-    font-size: 11px;
+    font-size: 16px;
     font-weight: lighter;
   }
 
-  .printContainer {
-    height: 7%;
-    width: 90%;
-    margin-top: 1.5em;
-    flex-flow: column wrap;
-    background: rgba(245, 245, 245, 0.13);
-    border: 1px solid rgba(0, 0, 0, 0.13);
-    box-shadow: 0px 3px 8px -5px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
+  /* Sección de contenedor de los iconos*/
+  #iconsContainer {
+    width: 70%;
+    padding: 2% 3% 2% 5%;
+    flex-flow: row wrap;
+    display: flex;
+  }
+
+  #pencilBtn {
+  }
+
+  #likeBtn {
+  }
+
+  #trashBtn {
   }
 
   .logoutContainer {
-    height: 7%;
+    height: 10%;
     width: 90%;
     display: flex;
     justify-content: flex-end;
@@ -465,7 +483,7 @@
   }
 
   .logoutButton {
-    height: 80%;
+    height: 55%;
     width: 35%;
     background: rgba(202, 231, 234, 1);
     border-radius: 32px;

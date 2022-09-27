@@ -16,6 +16,7 @@ import {
   addDoc,
   getDocs,
   deleteDoc,
+  doc,
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js";
 
 const auth = getAuth();
@@ -146,18 +147,53 @@ const printPost = async (userPost) => {
   userPost.innerHTML = "";
   querySnapshot.forEach((doc) => {
     console.log(`${doc.id} => ${doc.data().description}`);
-    userPost.innerHTML += `<div id="containerPost">
-    <h4 id="userName">${doc.data().name}</h4>
+    userPost.innerHTML += `<div id="userPostContainer">
+    <div id="containerPost">
+    <h6 id="userName">${doc.data().name}</h6>
     <p id="descriptionPost">${doc.data().description}</p>
+    </div>
+    <div id="iconsContainer"> 
+    <button id="pencilBtn">Editar</button>
+    <button id="likeBtn"> Like</button>
+    <button id="trashBtn"> Eliminar </button>
+    </div>
     </div>`;
   });
-  return userPost;
+
+  const iconsContainer = userPost.querySelector("#iconsContainer");
+  iconsContainer.forEach((e) => {
+    iconsContainer.addEventListener("click", delegacion(e));
+  });
+
+  function delegacion(e) {
+    e.preventDefault();
+    console.log(e.target.id);
+  }
+
+  /* deleteButtons.forEach((e) => {
+    e.target.deleteButtons;
+    deleteButtons.addEventListener("click", deletePost(e));
+  });*/
 };
 
 //Borrar datos
 function deletePost(id) {
-  deleteDoc(doc(db, "Post", id));
+  deleteDoc(doc(db, "Post", id))
+    .then(() => {
+      console.log("exito al borrar");
+    })
+    .catch((error) => {
+      console.log("Hiciste click en eliminar: ", error);
+    });
 }
+
+/*Función editar
+async function editPost(id, posting) {
+  const postEdit = doc(db, "Post", id);
+  await updateDoc(postEdit, {
+    description: posting,
+  });
+}*/
 
 export {
   app,
@@ -168,5 +204,5 @@ export {
   logout,
   showPost,
   printPost,
-  deletePost,
+  //deletePost,
 };
