@@ -457,15 +457,26 @@
     font-weight: lighter;
   }
 
+<<<<<<< HEAD
   /* Sección de contenedor de los iconos*/
+=======
+>>>>>>> 217f9e976a68215ea23eac77e676bb5bebd2a5e6
   #iconsContainer {
     width: 70%;
     padding: 2% 3% 2% 5%;
     flex-flow: row wrap;
     display: flex;
+<<<<<<< HEAD
   }
 
   #pencilBtn {
+=======
+    justify-content: flex-end;
+  }
+
+  #pencilBtn {
+    
+>>>>>>> 217f9e976a68215ea23eac77e676bb5bebd2a5e6
   }
 
   #likeBtn {
