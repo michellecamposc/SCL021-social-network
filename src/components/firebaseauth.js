@@ -141,9 +141,9 @@ const showPost = async (posting) => {
 
 //Función para que se impriman los post en el contenedor
 const printPost = (userPost) => {
-  onSnapshot(query(collection(db, "Post")), (doc) => {
-    userPost.innerHTML = "";
-    doc.forEach((doc) => {
+  onSnapshot(query(collection(db, "Post")), (docs) => {
+    //userPost.innerHTML = "";
+    docs.forEach((doc) => {
       doc.data();
       //console.log(`${doc.id} => ${doc.data().description}`);
       userPost.innerHTML += `<div id="userPostContainer">
@@ -154,11 +154,12 @@ const printPost = (userPost) => {
       <div id="iconsContainer"> 
       <button id="pencilBtn" class = "postBtn" data-id="${
         doc.id
-      }">Editar</button>
-      <button id="likeBtn" class = "postBtn">Likes</button>
+      }"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+      <button id="likeBtn" class = "postBtn"><i class="fa-solid fa-heart"></i> Likes</button>
       <button id="trashBtn" class = "postBtn" data-id="${
         doc.id
-      }">Eliminar</button>
+      }"><i class="fa-solid fa-trash"></i> Delete</button>
+      </div>
       </div>
       </div>`;
     });
@@ -170,6 +171,7 @@ const printPost = (userPost) => {
     icon.addEventListener("click", delegacion);
 
     function delegacion(e) {
+      console.log("delegacion");
       e.preventDefault();
       const idBtn = e.target.id;
       const idDoc = e.target.getAttribute("data-id");
@@ -184,31 +186,34 @@ const printPost = (userPost) => {
           console.log("diste click en like");
           break;
         case "pencilBtn":
-          editPosts(idDoc);
-          console.log("diste click en editar");
+          editPost(idDoc);
+          console.log("Editar comentario");
           break;
       }
     }
   });
 };
 
+//Función editar
+async function editPost(posting, idDoc) {
+  posting.innerHTML("inputPost").value = posting;
+  const edit = doc(db, "Post", idDoc);
+  await updateDoc(edit, {
+    description: posting,
+  });
+  console.log(editPost, "Editando función");
+}
+
 //Función borrar datos
 function deletePost(id) {
   deleteDoc(doc(db, "Post", id))
     .then(() => {
+      // location.reload()
       console.log("exito al borrar");
     })
     .catch((error) => {
       console.log("Hiciste click en eliminar: ", error);
     });
-}
-
-//Función editar
-async function editPosts(id, input) {
-  const postEdit = doc(db, "Post", id);
-  await updateDoc(postEdit, {
-    description: input,
-  });
 }
 
 export {
