@@ -139,7 +139,7 @@ const showPost = async (posting) => {
   console.log("Document written with ID: ", docRef.id);
 };
 
-//Función para que se impriman los post en el contenedor
+//Función para que se impriman los post en el contenedor (OnSnapshot)
 const printPost = (userPost) => {
   onSnapshot(query(collection(db, "Post")), (docs) => {
     //userPost.innerHTML = "";
@@ -164,6 +164,25 @@ const printPost = (userPost) => {
       </div>`;
     });
   });
+
+  //Función para que se impriman los post en el contenedor (No real time)
+  /*const printPost = async (userPost) => {
+    const querySnapshot = await getDocs(collection(db, "Post"));
+    userPost.innerHTML = "";
+    querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => ${doc.data().description}`);
+      userPost.innerHTML += `<div id="userPostContainer">
+      <div id="containerPost">
+      <h6 id="userName">${doc.data().name}</h6>
+      <p id="descriptionPost">${doc.data().description}</p>
+      </div>
+      <div id="iconsContainer"> 
+      <button id="pencilBtn" class = "postBtn" data-id="${doc.id}"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+      <button id="likeBtn" class = "postBtn"><i class="fa-solid fa-heart"></i> Likes</button>
+      <button id="trashBtn" class = "postBtn" data-id="${doc.id}"><i class="fa-solid fa-trash"></i> Delete</button>
+      </div>
+      </div>`;
+    });*/
 
   //Evento de delegación para darle funcionalidad a los botones
   const iconsContainer = userPost.querySelectorAll(".postBtn");
