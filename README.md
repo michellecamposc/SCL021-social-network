@@ -40,6 +40,4 @@ Los usuarios entrevistados trasnmitieron la falta de acceso a una plataforma don
 
 <img src= "./src/images/socialMediaWeb.png">
 
-## Ver red social aquí 👇
 
-Link:
