@@ -19,6 +19,7 @@ import {
   updateDoc,
   onSnapshot,
   query,
+  //getDocs,
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js";
 
 const auth = getAuth();
@@ -36,6 +37,7 @@ const logInWithGoogle = () => {
       return errorCode;
     });
 };
+
 //Función para loguearse con email y password (Luego de crear una cuenta)
 const logInWithEmailAndPassword = (email, password) => {
   signInWithEmailAndPassword(auth, email, password)
@@ -68,11 +70,9 @@ const logInWithEmailAndPassword = (email, password) => {
 const registerAccount = (email, password) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      //window.location.hash = '#/muro';
-
       // Promesa para enviar correo de verificación
       const user = userCredential.user;
-      return sendEmailVerification(user); //este return se convierte en promesa y tiene como parametro el usuario creado
+      return sendEmailVerification(user);
     })
     .then((successEmail) => {
       console.log(successEmail);
@@ -80,7 +80,7 @@ const registerAccount = (email, password) => {
     .catch((error) => {
       const errorCode = error.code;
 
-      // Alertas en caso de errores
+      // Alertas en caso de error
       switch (errorCode) {
         case "auth/email-already-in-use":
           alert("The email address is already in use");
@@ -138,11 +138,9 @@ const showPost = async (posting) => {
   document.getElementById("inputPost").value = "";
   console.log("Document written with ID: ", docRef.id);
 };
-
 //Función para que se impriman los post en el contenedor (OnSnapshot)
 const printPost = (userPost) => {
   onSnapshot(query(collection(db, "Post")), (docs) => {
-    //userPost.innerHTML = "";
     docs.forEach((doc) => {
       doc.data();
       //console.log(`${doc.id} => ${doc.data().description}`);
@@ -165,32 +163,13 @@ const printPost = (userPost) => {
     });
   });
 
-  //Función para que se impriman los post en el contenedor (No real time)
-  /*const printPost = async (userPost) => {
-    const querySnapshot = await getDocs(collection(db, "Post"));
-    userPost.innerHTML = "";
-    querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data().description}`);
-      userPost.innerHTML += `<div id="userPostContainer">
-      <div id="containerPost">
-      <h6 id="userName">${doc.data().name}</h6>
-      <p id="descriptionPost">${doc.data().description}</p>
-      </div>
-      <div id="iconsContainer"> 
-      <button id="pencilBtn" class = "postBtn" data-id="${doc.id}"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
-      <button id="likeBtn" class = "postBtn"><i class="fa-solid fa-heart"></i> Likes</button>
-      <button id="trashBtn" class = "postBtn" data-id="${doc.id}"><i class="fa-solid fa-trash"></i> Delete</button>
-      </div>
-      </div>`;
-    });*/
-
   //Evento de delegación para darle funcionalidad a los botones
   const iconsContainer = userPost.querySelectorAll(".postBtn");
   iconsContainer.forEach((icon) => {
-    icon.addEventListener("click", delegacion);
+    icon.addEventListener("click", delegation);
 
-    function delegacion(e) {
-      console.log("delegacion");
+    function delegation(e) {
+      console.log("delegation");
       e.preventDefault();
       const idBtn = e.target.id;
       const idDoc = e.target.getAttribute("data-id");
@@ -245,3 +224,26 @@ export {
   showPost,
   printPost,
 };
+
+/*Función para que se impriman los post en el contenedor (No real time)
+const printPost = async (userPost) => {
+  const querySnapshot = await getDocs(collection(db, "Post"));
+  userPost.innerHTML = "";
+  querySnapshot.forEach((doc) => {
+    console.log(`${doc.id} => ${doc.data().description}`);
+    userPost.innerHTML += `<div id="userPostContainer">
+      <div id="containerPost">
+      <h6 id="userName">${doc.data().name}</h6>
+      <p id="descriptionPost">${doc.data().description}</p>
+      </div>
+      <div id="iconsContainer"> 
+      <button id="pencilBtn" class = "postBtn" data-id="${
+        doc.id
+      }"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+      <button id="likeBtn" class = "postBtn"><i class="fa-solid fa-heart"></i> Likes</button>
+      <button id="trashBtn" class = "postBtn" data-id="${
+        doc.id
+      }"><i class="fa-solid fa-trash"></i> Delete</button>
+      </div>
+      </div>`;
+  });*/

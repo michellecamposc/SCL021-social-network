@@ -14,8 +14,9 @@
     "eslint": "eslint --ext .js src/ test/",
     "stylelint": "stylelint --aei src/**/*.css",
     "pretest": "npm run htmlhint && npm run eslint && npm run stylelint",
-    "test": "jest --coverage",
-    "start": "serve -s src/"
+    "test": "jest --verbose --coverage",
+    "start": "serve -s src/",
+    "deploy": "deploy-to-git"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
@@ -25,6 +26,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^25.3.0",
+    "firebase-tools": "^1.2.0",
     "htmlhint": "^1.0.0",
     "jest": "^27.0.1",
     "regenerator-runtime": "^0.13.1",
@@ -46,7 +48,7 @@
   "bugs": {
     "url": "https://github.com/michellecamposc/SCL021-social-network/issues"
   },
-  "homepage": "https://github.com/michellecamposc/SCL021-social-network#readme",
+  "homepage": "https://michellecamposc.github.io/SCL021-social-network/",
   "dependencies": {
     "firebase": "^9.9.3",
     "firebase-admin": "^11.0.1"
