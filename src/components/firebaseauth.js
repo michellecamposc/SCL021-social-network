@@ -138,7 +138,7 @@ const showPost = async (posting) => {
   document.getElementById("inputPost").value = "";
   console.log("Document written with ID: ", docRef.id);
 };
-//Función para que se impriman los post en el contenedor (OnSnapshot)
+//Función para que se impriman los post en el contenedor en tiempo real
 const printPost = (userPost) => {
   onSnapshot(query(collection(db, "Post")), (docs) => {
     docs.forEach((doc) => {
@@ -150,13 +150,11 @@ const printPost = (userPost) => {
       <p id="descriptionPost">${doc.data().description}</p>
       </div>
       <div id="iconsContainer"> 
-      <button id="pencilBtn" class = "postBtn" data-id="${
-        doc.id
-      }"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+      <button id="pencilBtn" class = "postBtn" data-id="${doc.id
+        }"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
       <button id="likeBtn" class = "postBtn"><i class="fa-solid fa-heart"></i> Likes</button>
-      <button id="trashBtn" class = "postBtn" data-id="${
-        doc.id
-      }"><i class="fa-solid fa-trash"></i> Delete</button>
+      <button id="trashBtn" class = "postBtn" data-id="${doc.id
+        }"><i class="fa-solid fa-trash"></i> Delete</button>
       </div>
       </div>
       </div>`;
